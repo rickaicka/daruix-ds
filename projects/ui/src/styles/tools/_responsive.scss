@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use '../tokens/breakpoints' as *;
+
+@mixin media-down($size) {
+  @if map.has-key($drx-breakpoints, $size) {
+    @media (max-width: map.get($drx-breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @error 'Breakpoint "#{$size}" não encontrado.';
+  }
+}
+
+@mixin media-up($size) {
+  @if map.has-key($drx-breakpoints, $size) {
+    @media (min-width: map.get($drx-breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @error 'Breakpoint "#{$size}" não encontrado.';
+  }
+}
+
+@mixin media-between($min, $max) {
+  @if map.has-key($drx-breakpoints, $min) and map.has-key($drx-breakpoints, $max) {
+    @media (min-width: map.get($drx-breakpoints, $min)) and (max-width: map.get($drx-breakpoints, $max)) {
+      @content;
+    }
+  } @else {
+    @error 'Breakpoint inválido.';
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == micro {
+    @media (max-width: 360px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == notebook {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == desktop {
+    @media (min-width: 1201px) {
+      @content;
+    }
+  }
+}

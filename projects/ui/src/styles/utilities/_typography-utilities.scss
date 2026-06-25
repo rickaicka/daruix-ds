@@ -1,0 +1,49 @@
+@use '../tokens/typography' as *;
+
+@each $name, $size in $drx-font-sizes {
+  .drx-font-raleway-#{$name} {
+    font-family: $drx-font-family-raleway !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-size: $size !important;
+  }
+
+  .drx-font-quicksand-#{$name} {
+    font-family: $drx-font-family-quicksand !important;
+    font-optical-sizing: auto !important;
+    font-weight: 500 !important;
+    font-size: $size !important;
+  }
+
+  .drx-font-gothic-#{$name} {
+    font-family: $drx-font-family-gothic !important;
+    font-optical-sizing: auto !important;
+    font-style: normal !important;
+    font-weight: 200 !important;
+    font-size: $size !important;
+  }
+}
+
+.drx-font-regular {
+  font-weight: 400;
+}
+
+.drx-font-semibold {
+  font-weight: 600;
+}
+
+.drx-text-center {
+  text-align: center;
+}
+
+.bold-font {
+  @extend .drx-font-regular;
+}
+
+.bolder-font {
+  @extend .drx-font-semibold;
+}
+
+.text-align-center {
+  @extend .drx-text-center;
+}

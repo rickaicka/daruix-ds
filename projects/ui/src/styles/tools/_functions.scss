@@ -1,0 +1,11 @@
+@function drx-css-var($name) {
+  @return var(#{$name});
+}
+
+@function get-color($color) {
+  @return $color;
+}
+
+@function convert-var-to-color($var) {
+  @return '%23' + $var;
+}

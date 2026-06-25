@@ -1,0 +1,78 @@
+@use '../tokens/typography' as *;
+
+.drx-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 0;
+  border-radius: 5px;
+
+  padding: 12px 24px;
+
+  font-family: $drx-font-family-quicksand;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.drx-button--font-quicksand {
+  font-family: $drx-font-family-quicksand;
+}
+
+.drx-button--font-gothic {
+  font-family: $drx-font-family-gothic;
+}
+
+.drx-button--font-raleway {
+  font-family: $drx-font-family-raleway;
+}
+
+.drx-button--primary {
+  background: var(--drx-red-base);
+  color: var(--ex-pure-white);
+
+  &:hover:not(:disabled) {
+    background: var(--ex-red-scale-700);
+  }
+}
+
+.drx-button--secondary {
+  background: var(--ex-neutral-scale-200);
+  color: var(--ex-gray-scale-600);
+
+  &:hover:not(:disabled) {
+    background: var(--ex-neutral-scale-300);
+    color: var(--ex-gray-scale-700);
+  }
+}
+
+.drx-button--tertiary {
+  background: var(--ex-neutral-scale-200);
+  color: var(--ex-gray-scale-600);
+  padding: 4px 16px;
+
+  &:hover:not(:disabled) {
+    background: var(--ex-neutral-scale-300);
+    color: var(--ex-gray-scale-700);
+  }
+}
+
+.drx-button--small {
+  padding: 4px 16px;
+}

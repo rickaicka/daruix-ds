@@ -1,0 +1,186 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "App",
+            "id": "component-App-662d34eb19241a52e6c8998469a51f1351d65dc509ce7174ae120c400175eb30004b1155cd4692097b2f397678b4e3883d09f03bb17545785fac662b199a37f0",
+            "file": "projects/ds-playground/src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "signal('ds-playground')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "Botao"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { Botao } from './botao/botao';\n\n@Component({\n  selector: 'app-root',\n  imports: [Botao],\n  templateUrl: './app.html',\n  styleUrl: './app.scss',\n})\nexport class App {\n  protected readonly title = signal('ds-playground');\n}\n",
+            "styleUrl": "./app.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<app-botao></app-botao>\n"
+        },
+        {
+            "name": "Botao",
+            "id": "component-Botao-66e3708557c48a52ce8cd58d402c524f4447e9f652b24f38f23b550af1a9b72d8ec116272bf8f6dd3b7876aafde471ce32d3df8b51995ef775e68b2fa885b516",
+            "file": "projects/ds-playground/src/app/botao/botao.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-botao",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./botao.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { ButtonComponent } from '../../../../ui/src/lib/button/button.component';\n@Component({\n  selector: 'app-botao',\n  imports: [ButtonComponent],\n  templateUrl: './botao.html',\n  styleUrl: './botao.scss',\n})\nexport class Botao {}\n",
+            "styleUrl": "./botao.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<drx-button [font]=\"'gothic'\">teste btn</drx-button>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ds-playground/src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [provideBrowserGlobalErrorListeners()],\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/ds-playground/src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ds-playground/src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [provideBrowserGlobalErrorListeners()],\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/ds-playground/src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ds-playground/src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "App",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ds-playground/src/app/botao/botao.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Botao",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

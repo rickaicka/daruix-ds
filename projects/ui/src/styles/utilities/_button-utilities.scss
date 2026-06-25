@@ -1,0 +1,27 @@
+@use '../components/button';
+
+.btn-primary {
+  @extend .drx-button;
+  @extend .drx-button--primary;
+}
+
+.btn-secondary {
+  @extend .drx-button;
+  @extend .drx-button--secondary;
+}
+
+.btn-third {
+  @extend .drx-button;
+  @extend .drx-button--tertiary;
+}
+
+.active-btn {
+  @extend .drx-button;
+  @extend .drx-button--primary;
+}
+
+.active-small-btn {
+  @extend .drx-button;
+  @extend .drx-button--primary;
+  @extend .drx-button--small;
+}

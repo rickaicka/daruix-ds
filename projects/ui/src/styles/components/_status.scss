@@ -1,0 +1,51 @@
+@use 'sass:map';
+
+$drx-status-colors: (
+  'opened': (
+    'background': var(--ex-blue-scale-300),
+    'color': var(--ex-blue-scale-600),
+  ),
+  'undelivered': (
+    'background': var(--ex-red-scale-300),
+    'color': var(--ex-red-scale-600),
+  ),
+  'delivered': (
+    'background': var(--ex-green-scale-300),
+    'color': var(--ex-green-scale-600),
+  ),
+);
+
+.drx-status {
+  width: 130px;
+  padding: 6px 12px;
+
+  border-radius: 30px;
+
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 12px;
+
+  text-align: center;
+}
+
+.drx-status--mobile {
+  width: 115px;
+  margin: 0 auto;
+}
+
+@each $status, $tokens in $drx-status-colors {
+  .drx-status--#{$status} {
+    background-color: map.get($tokens, 'background');
+    color: map.get($tokens, 'color');
+  }
+
+  .status-#{$status} {
+    @extend .drx-status;
+    @extend .drx-status--#{$status};
+  }
+
+  .status-#{$status}--mobile {
+    @extend .drx-status--mobile;
+  }
+}

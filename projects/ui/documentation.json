@@ -1,0 +1,552 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-c8d93cffa45f96c03088df28edcc1f97b84b0be6e691e1c03e3bd758e6610328bf425c0341bba528bf35164844aecf9cd291245aa924b9e90eda8f12f8b3e91c",
+            "file": "projects/ui/src/lib/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "drx-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "required": false
+                },
+                {
+                    "name": "font",
+                    "defaultValue": "'quicksand'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DrxButtonFont",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "required": false
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DrxButtonSize",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": false
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DrxButtonType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "required": false
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DrxButtonVariant",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "buttonClasses",
+                    "defaultValue": "computed(() => {\r\n    const classes = [\r\n      'drx-button',\r\n      `drx-button--${this.variant()}`,\r\n      `drx-font-${this.font()}-body`,\r\n      'drx-font-semibold',\r\n    ];\r\n\r\n    if (this.size() === 'small') {\r\n      classes.push('drx-button--small');\r\n    }\r\n\r\n    return classes.join(' ');\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, computed, input } from '@angular/core';\r\n\r\nexport type DrxButtonVariant = 'primary' | 'secondary' | 'tertiary';\r\nexport type DrxButtonSize = 'medium' | 'small';\r\nexport type DrxButtonType = 'button' | 'submit' | 'reset';\r\nexport type DrxButtonFont = 'quicksand' | 'gothic' | 'roboto';\r\n\r\n@Component({\r\n  selector: 'drx-button',\r\n  standalone: true,\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n})\r\nexport class ButtonComponent {\r\n  variant = input<DrxButtonVariant>('primary');\r\n  size = input<DrxButtonSize>('medium');\r\n  disabled = input(false);\r\n  type = input<DrxButtonType>('button');\r\n  font = input<DrxButtonFont>('quicksand');\r\n\r\n  buttonClasses = computed(() => {\r\n    const classes = [\r\n      'drx-button',\r\n      `drx-button--${this.variant()}`,\r\n      `drx-font-${this.font()}-body`,\r\n      'drx-font-semibold',\r\n    ];\r\n\r\n    if (this.size() === 'small') {\r\n      classes.push('drx-button--small');\r\n    }\r\n\r\n    return classes.join(' ');\r\n  });\r\n}\r\n",
+            "styleUrl": "./button.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<button\r\n  [class]=\"buttonClasses()\"\r\n  [disabled]=\"disabled()\"\r\n  [attr.type]=\"type()\"\r\n>\r\n  <ng-content />\r\n</button>\r\n"
+        },
+        {
+            "name": "Ui",
+            "id": "component-Ui-6ce7ae3da67e2fb17f5e95651eccb2dd8a2c171cb912f0660278f7ce1a01d0a444030937a8455c65c4eec3d0dccd72ef530f627734776bdd757dae15740afc1e",
+            "file": "projects/ui/src/lib/ui.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "drx-ui",
+            "styleUrls": [],
+            "styles": [
+                ""
+            ],
+            "template": "<p>ui works!</p>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'drx-ui',\n  imports: [],\n  template: ` <p>ui works!</p> `,\n  styles: ``,\n})\nexport class Ui {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/.storybook/main.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StorybookConfig",
+                "defaultValue": "{\n  stories: [\n    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',\n  ],\n  addons: [\n    '@storybook/addon-docs',\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    variant: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Secundário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "TertiarySmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    variant: 'tertiary',\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Ver mais\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "DrxButtonFont",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"quicksand\" | \"gothic\" | \"roboto\"",
+                "file": "projects/ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "DrxButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"medium\" | \"small\"",
+                "file": "projects/ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "DrxButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                "file": "projects/ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "DrxButtonVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\" | \"tertiary\"",
+                "file": "projects/ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/ui/.storybook/main.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/.storybook/main.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StorybookConfig",
+                    "defaultValue": "{\n  stories: [\n    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',\n  ],\n  addons: [\n    '@storybook/addon-docs',\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
+                }
+            ],
+            "projects/ui/src/lib/button/button.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    variant: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Secundário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "TertiarySmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    variant: 'tertiary',\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Ver mais\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+                }
+            ],
+            "projects/ui/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/ui/src/lib/button/button.component.ts": [
+                {
+                    "name": "DrxButtonFont",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"quicksand\" | \"gothic\" | \"roboto\"",
+                    "file": "projects/ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "DrxButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"medium\" | \"small\"",
+                    "file": "projects/ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "DrxButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                    "file": "projects/ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "DrxButtonVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\" | \"tertiary\"",
+                    "file": "projects/ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "projects/ui/src/lib/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/ui/.storybook/main.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "DrxButtonFont",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "DrxButtonSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "DrxButtonType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "DrxButtonVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TertiarySmall",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/button/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/ui.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Ui",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

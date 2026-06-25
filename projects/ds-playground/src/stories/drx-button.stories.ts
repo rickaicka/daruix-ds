@@ -1,0 +1,101 @@
+import type { Meta, StoryObj } from '@storybook/angular';
+import { ButtonComponent } from '../../../ui/src/lib/button/button.component';
+
+const meta: Meta<ButtonComponent> = {
+  title: 'Components/Button',
+  component: ButtonComponent,
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+    },
+    size: {
+      control: 'select',
+      options: ['medium', 'small'],
+    },
+    font: {
+      control: 'select',
+      options: ['quicksand', 'gothic', 'raleway'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    type: {
+      control: 'select',
+      options: ['button', 'submit', 'reset'],
+    },
+  },
+  args: {
+    variant: 'primary',
+    size: 'medium',
+    font: 'quicksand',
+    disabled: false,
+    type: 'button',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<ButtonComponent>;
+
+export const Primary: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <drx-button
+        [variant]="variant"
+        [size]="size"
+        [font]="font"
+        [disabled]="disabled"
+        [type]="type"
+        [text]="text"
+      >
+        Botão Primário
+      </drx-button>
+    `,
+  }),
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+  },
+  render: (args) => ({
+    props: args,
+    template: `
+      <drx-button
+        [variant]="variant"
+        [size]="size"
+        [font]="font"
+        [disabled]="disabled"
+        [type]="type"
+        [text]="text"
+      >
+        Botão Secundário
+      </drx-button>
+    `,
+  }),
+};
+
+export const TertiarySmall: Story = {
+  args: {
+    variant: 'tertiary',
+    size: 'small',
+  },
+  render: (args) => ({
+    props: args,
+    template: `
+      <drx-button
+        [variant]="variant"
+        [size]="size"
+        [font]="font"
+        [disabled]="disabled"
+        [type]="type"
+        [text]="text"
+      >
+        Ver mais
+      </drx-button>
+    `,
+  }),
+};

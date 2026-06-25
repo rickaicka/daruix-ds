@@ -1,0 +1,14 @@
+.drx-divider {
+  width: 100%;
+  margin: 32px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid var(--ex-gray-scale-400);
+}
+
+.divider {
+  @extend .drx-divider;
+}

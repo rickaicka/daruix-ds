@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Quicksand", serif;
+  color: var(--ex-gray-scale-800);
+  background: var(--ex-pure-white);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}

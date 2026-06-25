@@ -1,0 +1,42 @@
+@use '../tokens/sizes' as *;
+
+.unset-button {
+  padding: unset;
+  margin: unset;
+  background: unset;
+  border: unset;
+  height: unset;
+  width: unset;
+  font: inherit;
+  cursor: pointer;
+}
+
+@each $name, $size in $drx-width-sizes {
+  .drx-w-#{$name} {
+    width: $size;
+  }
+
+  .type__#{$name} {
+    @extend .drx-w-#{$name};
+  }
+}
+
+@each $name, $size in $drx-image-height-sizes {
+  .drx-img-h-#{$name} {
+    height: $size;
+  }
+
+  .img-type.size-#{$name} {
+    @extend .drx-img-h-#{$name};
+  }
+}
+
+@each $name, $padding in $drx-padding-sizes {
+  .drx-padding-#{$name} {
+    padding: 8px $padding 0;
+  }
+
+  .padding-#{$name} {
+    @extend .drx-padding-#{$name};
+  }
+}
