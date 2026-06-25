@@ -22,7 +22,15 @@
 
     "prepublish:ui": "npm run build:ui",
     "pack:ui": "npm run build:ui && cd dist/ui && npm pack",
-    "publish:ui": "npm run build:ui && cd dist/ui && npm publish --access public"
+    "publish:ui": "npm run build:ui && cd dist/ui && npm publish --access public",
+
+    "version:ui:patch": "npm version patch --prefix projects/ui --no-git-tag-version",
+    "version:ui:minor": "npm version minor --prefix projects/ui --no-git-tag-version",
+    "version:ui:major": "npm version major --prefix projects/ui --no-git-tag-version",
+
+    "release:ui:patch": "npm run version:ui:patch && npm run build:ui",
+    "release:ui:minor": "npm run version:ui:minor && npm run build:ui",
+    "release:ui:major": "npm run version:ui:major && npm run build:ui"
   },
   "private": true,
   "packageManager": "npm@11.13.0",
