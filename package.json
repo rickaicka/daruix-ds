@@ -3,31 +3,23 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-
     "start": "ng serve ds-playground",
     "start:playground": "ng serve ds-playground",
-
     "build": "ng build ui",
     "build:ui": "ng build ui",
     "build:ui:dev": "ng build ui --configuration development",
     "build:playground": "ng build ds-playground",
-
     "watch": "ng build ui --watch --configuration development",
-
     "test": "ng test",
     "test:ui": "ng test ui",
-
     "storybook": "ng run ds-playground:storybook",
     "build:storybook": "ng run ds-playground:build-storybook",
-
     "prepublish:ui": "npm run build:ui",
     "pack:ui": "npm run build:ui && cd dist/ui && npm pack",
     "publish:ui": "npm run build:ui && cd dist/ui && npm publish --access public",
-
     "version:ui:patch": "npm version patch --prefix projects/ui --no-git-tag-version",
     "version:ui:minor": "npm version minor --prefix projects/ui --no-git-tag-version",
     "version:ui:major": "npm version major --prefix projects/ui --no-git-tag-version",
-
     "release:ui:patch": "npm run version:ui:patch && npm run build:ui",
     "release:ui:minor": "npm run version:ui:minor && npm run build:ui",
     "release:ui:major": "npm run version:ui:major && npm run build:ui"
@@ -41,26 +33,27 @@
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
+    "@lucide/angular": "^1.25.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "^0.2102.0",
+    "@angular-devkit/build-angular": "^21.2.0",
+    "@angular-devkit/core": "^21.2.0",
     "@angular/build": "^21.2.16",
     "@angular/cli": "^21.2.15",
     "@angular/compiler-cli": "^21.2.0",
+    "@angular/platform-browser-dynamic": "^21.2.0",
+    "@compodoc/compodoc": "^1.2.1",
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/addon-docs": "^10.4.6",
+    "@storybook/angular": "^10.4.6",
     "jsdom": "^28.0.0",
     "ng-packagr": "^21.2.0",
     "prettier": "^3.8.1",
-    "typescript": "~5.9.2",
-    "vitest": "^4.0.8",
     "storybook": "^10.4.6",
-    "@storybook/angular": "^10.4.6",
-    "@storybook/addon-a11y": "^10.4.6",
-    "@storybook/addon-docs": "^10.4.6",
-    "@angular-devkit/build-angular": "^21.2.0",
-    "@angular-devkit/architect": "^0.2102.0",
-    "@angular-devkit/core": "^21.2.0",
-    "@angular/platform-browser-dynamic": "^21.2.0",
-    "@compodoc/compodoc": "^1.2.1"
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
   }
 }

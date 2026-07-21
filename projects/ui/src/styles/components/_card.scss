@@ -1,0 +1,116 @@
+.drx-card {
+  min-width: 0;
+  min-height: 130px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+
+  background: var(--ex-gray-scale-100, #ffffff);
+
+  border: 1px solid var(--ex-gray-scale-400);
+  border-radius: 8px;
+
+  box-shadow: 0 2px 8px rgba(37, 40, 49, 0.06);
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    border-color: var(--ex-gray-scale-500);
+    box-shadow: 0 8px 22px rgba(37, 40, 49, 0.09);
+    transform: translateY(-1px);
+  }
+
+  &.drx-card--small {
+    min-height: 100px;
+  }
+
+  &.drx-card--large {
+    min-height: 260px;
+  }
+}
+
+.card-title-wrapper {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+app-hub-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+
+  flex-shrink: 0;
+
+  color: var(--module-color, #c00d0e);
+
+  background-color: color-mix(
+    in srgb,
+    var(--module-color, #c00d0e) 12%,
+    transparent
+  );
+
+  border-radius: 50%;
+
+  --hub-icon-size: 22px;
+}
+
+.card-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.card-title {
+  color: var(--drx-color-heading, #252831);
+}
+
+.card-description {
+  margin: 0;
+
+  color: var(--drx-color-text-secondary, #687083);
+}
+
+.chip-platform-wrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  & .chip-item{
+    padding: 4px;
+    min-width: 40px;
+    text-align: center;
+    background-color: var(--drx-gray-200);
+    border-radius: 25px;
+    font-size: 12px;
+  }
+}
+
+.drx-card--title-sm{
+  font-size: var(--drx-button-font-size, var(--drx-font-size-subtitle-sm));
+  font-weight: var(--drx-button-font-weight, var(--drx-font-weight-semibold));
+  line-height: var(--drx-button-line-height, var(--drx-line-height-tight));
+}
+
+.drx-card{
+  &--font-quicksand {
+    font-family: var(--drx-font-family-base);
+  }
+  &--body-md{
+    font-size: var(--drx-font-size-body-sm);
+  }
+}

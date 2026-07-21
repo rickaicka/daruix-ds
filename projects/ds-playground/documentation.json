@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "App",
-            "id": "component-App-662d34eb19241a52e6c8998469a51f1351d65dc509ce7174ae120c400175eb30004b1155cd4692097b2f397678b4e3883d09f03bb17545785fac662b199a37f0",
+            "id": "component-App-77fb8de1df7a6adfd97eadc76442dabb7f3d7b3ebd513b9d8b6274d5913da1e4cc6f71ad3c02777aff1c17f04bb3cac62224809a4ede760533631242073add41",
             "file": "projects/ds-playground/src/app/app.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -36,7 +36,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "modifierKind": [
                         124,
                         148
@@ -52,22 +52,26 @@
             "imports": [
                 {
                     "name": "Botao"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { Botao } from './botao/botao';\n\n@Component({\n  selector: 'app-root',\n  imports: [Botao],\n  templateUrl: './app.html',\n  styleUrl: './app.scss',\n})\nexport class App {\n  protected readonly title = signal('ds-playground');\n}\n",
+            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { Botao } from './botao/botao';\nimport { CardComponent } from '../../../ui/src/lib/card/card.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [Botao,CardComponent],\n  templateUrl: './app.html',\n  styleUrl: './app.scss',\n})\nexport class App {\n  protected readonly title = signal('ds-playground');\n}\n",
             "styleUrl": "./app.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<app-botao></app-botao>\n"
+            "templateData": "\n<div class=\"container\">\n  <app-botao></app-botao>\n  <div class=\"grid\">\n    <drx-card [size]=\"'large'\">teste</drx-card>\n    <drx-card [size]=\"'small'\">a</drx-card>\n    <drx-card></drx-card>\n  </div>\n</div>\n"
         },
         {
             "name": "Botao",
-            "id": "component-Botao-66e3708557c48a52ce8cd58d402c524f4447e9f652b24f38f23b550af1a9b72d8ec116272bf8f6dd3b7876aafde471ce32d3df8b51995ef775e68b2fa885b516",
+            "id": "component-Botao-3af6e042a6ddbd95af0b5b0831b8413d8d2a2c7f01556b5c71c28dfafb5c7241f165e9ca426c40708c6d93e283e044fd0ca96711e03ba667119d8022f12ecdbc",
             "file": "projects/ds-playground/src/app/botao/botao.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -100,7 +104,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { ButtonComponent } from '../../../../ui/src/lib/button/button.component';\n@Component({\n  selector: 'app-botao',\n  imports: [ButtonComponent],\n  templateUrl: './botao.html',\n  styleUrl: './botao.scss',\n})\nexport class Botao {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { ButtonComponent } from '../../../../ui/src/lib/button/button.component';\n\n@Component({\n  selector: 'app-botao',\n  imports: [ButtonComponent],\n  templateUrl: './botao.html',\n  styleUrl: './botao.scss',\n})\nexport class Botao {}\n",
             "styleUrl": "./botao.scss",
             "assetsDirs": [],
             "styleUrlsData": "",

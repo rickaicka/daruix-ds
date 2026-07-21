@@ -1,4 +1,39 @@
 <div
-  [class]="cardClasses()">
-  <ng-content></ng-content>
+  [class]="cardClasses()"
+  [style.--module-color]="moduloColor()"
+>
+  @if (title()) {
+    <div class="card-title-wrapper">
+      <app-hub-icon [name]="icon()" />
+      <div class="card-content">
+        <strong class="card-title drx-font-family-heading">
+          <span class=" drx-button--font-gothic drx-card--title-sm">
+            {{ title() }}
+          </span>
+        </strong>
+        @if(platform().length > 0){
+          <div class="chip-platform-wrapper">
+            @for (plat of platform();track $index){
+              <div class="chip-item">
+                <span class="drx-button--font-quicksand">{{plat}}</span>
+              </div>
+            }
+          </div>
+        }
+
+        @if (description()) {
+          <p class="card-description drx-card--body-md">
+            {{ description() }}
+          </p>
+        }
+      </div>
+      @if(favorite()){
+        <div class="card-favorite">
+          <svg lucideStar></svg>
+        </div>
+      }
+    </div>
+  } @else {
+    <ng-content />
+  }
 </div>

@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-c8d93cffa45f96c03088df28edcc1f97b84b0be6e691e1c03e3bd758e6610328bf425c0341bba528bf35164844aecf9cd291245aa924b9e90eda8f12f8b3e91c",
+            "id": "component-ButtonComponent-5ee19db67d706070ef4cc3a7f7bf4ceb75ed0d646df7f49fcf0fd7bed5303ca10ebeba4e2e2017b58b8361a0f1ab751d493cdc7efd60dfee98228d9620d240b9",
             "file": "projects/ui/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -89,7 +89,7 @@
             "propertiesClass": [
                 {
                     "name": "buttonClasses",
-                    "defaultValue": "computed(() => {\r\n    const classes = [\r\n      'drx-button',\r\n      `drx-button--${this.variant()}`,\r\n      `drx-font-${this.font()}-body`,\r\n      'drx-font-semibold',\r\n    ];\r\n\r\n    if (this.size() === 'small') {\r\n      classes.push('drx-button--small');\r\n    }\r\n\r\n    return classes.join(' ');\r\n  })",
+                    "defaultValue": "computed(() => {\r\n    const classes = [\r\n      'drx-button',\r\n      `drx-button--${this.variant()}`,\r\n      `drx-button--font-${this.font()}`,\r\n    ];\r\n\r\n    if (this.size() === 'small') {\r\n      classes.push('drx-button--small');\r\n    }\r\n\r\n    return classes.join(' ');\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -109,13 +109,159 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, computed, input } from '@angular/core';\r\n\r\nexport type DrxButtonVariant = 'primary' | 'secondary' | 'tertiary';\r\nexport type DrxButtonSize = 'medium' | 'small';\r\nexport type DrxButtonType = 'button' | 'submit' | 'reset';\r\nexport type DrxButtonFont = 'quicksand' | 'gothic' | 'roboto';\r\n\r\n@Component({\r\n  selector: 'drx-button',\r\n  standalone: true,\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n})\r\nexport class ButtonComponent {\r\n  variant = input<DrxButtonVariant>('primary');\r\n  size = input<DrxButtonSize>('medium');\r\n  disabled = input(false);\r\n  type = input<DrxButtonType>('button');\r\n  font = input<DrxButtonFont>('quicksand');\r\n\r\n  buttonClasses = computed(() => {\r\n    const classes = [\r\n      'drx-button',\r\n      `drx-button--${this.variant()}`,\r\n      `drx-font-${this.font()}-body`,\r\n      'drx-font-semibold',\r\n    ];\r\n\r\n    if (this.size() === 'small') {\r\n      classes.push('drx-button--small');\r\n    }\r\n\r\n    return classes.join(' ');\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component, computed, input } from '@angular/core';\r\n\r\nexport type DrxButtonVariant = 'primary' | 'secondary' | 'tertiary';\r\nexport type DrxButtonSize = 'medium' | 'small';\r\nexport type DrxButtonType = 'button' | 'submit' | 'reset';\r\nexport type DrxButtonFont = 'quicksand' | 'gothic' | 'raleway';\r\n\r\n@Component({\r\n  selector: 'drx-button',\r\n  standalone: true,\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n})\r\nexport class ButtonComponent {\r\n  variant = input<DrxButtonVariant>('primary');\r\n  size = input<DrxButtonSize>('medium');\r\n  disabled = input(false);\r\n  type = input<DrxButtonType>('button');\r\n  font = input<DrxButtonFont>('quicksand');\r\n\r\n  buttonClasses = computed(() => {\r\n    const classes = [\r\n      'drx-button',\r\n      `drx-button--${this.variant()}`,\r\n      `drx-button--font-${this.font()}`,\r\n    ];\r\n\r\n    if (this.size() === 'small') {\r\n      classes.push('drx-button--small');\r\n    }\r\n\r\n    return classes.join(' ');\r\n  });\r\n}\r\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
             "templateData": "<button\r\n  [class]=\"buttonClasses()\"\r\n  [disabled]=\"disabled()\"\r\n  [attr.type]=\"type()\"\r\n>\r\n  <ng-content />\r\n</button>\r\n"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-0dd1b84191263453c5c237d588c4c80b6b966e542a37a8d3d4db4c38a9bef5134b45a89a12d0cbbf590b6aeefc97eae62c9b85b9224ffbfaa0cfab832011f3b9",
+            "file": "projects/ui/src/lib/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "drx-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "description",
+                    "defaultValue": "'description'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "required": false
+                },
+                {
+                    "name": "favorite",
+                    "defaultValue": "'favorite'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "required": false
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "'icon'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "required": false
+                },
+                {
+                    "name": "moduloColor",
+                    "defaultValue": "'#c00d0e'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": false
+                },
+                {
+                    "name": "platform",
+                    "defaultValue": "'platform'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "required": false
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DrxCardSize",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "cardClasses",
+                    "defaultValue": "computed(() => {\n    const classes = ['drx-card', `drx-card--${this.size()}`];\n    return classes.join(' ');\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "LucideDynamicIcon"
+                },
+                {
+                    "name": "LucideCircleQuestionMark"
+                },
+                {
+                    "name": "HubIconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, computed, input } from '@angular/core';\nimport { LucideCircleQuestionMark, LucideDynamicIcon } from '@lucide/angular';\nimport { HubIconComponent } from '../../../../ds-playground/src/app/icons/hub-icon.component';\n\nexport type DrxCardSize = 'medium' | 'small' | 'large';\n\n@Component({\n  selector: 'drx-card',\n  imports: [LucideDynamicIcon, LucideCircleQuestionMark, HubIconComponent],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss',\n  standalone: true,\n})\nexport class CardComponent {\n  size = input<DrxCardSize>('medium');\n  moduloColor = input<string>('#c00d0e');\n  icon = input<string>('icon');\n  title = input<string>('title');\n  description = input<string>('description');\n  favorite = input<string>('favorite');\n  platform = input<string>('platform');\n\n  cardClasses = computed(() => {\n    const classes = ['drx-card', `drx-card--${this.size()}`];\n    return classes.join(' ');\n  });\n}\n\n",
+            "styleUrl": "./card.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div\n  [class]=\"cardClasses()\">\n  @if(!title()){\n    <ng-content></ng-content>\n  }@else{\n    <div class=\"drx-card card-title-wrapper\">\n      @if(!icon()){\n        <svg lucideCircleQuestionMark></svg>\n      }@else{\n        <app-hub-icon [name]=\"icon()\"></app-hub-icon>\n      }\n    </div>\n  }\n</div>\n"
         },
         {
             "name": "Ui",
@@ -179,6 +325,16 @@
                 "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CardComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Card',\r\n  component: CardComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    size: {\r\n      control: 'select',\r\n      options: ['small', 'medium', 'large'],\r\n    },\r\n  },\r\n  args: {\r\n    size: 'medium',\r\n  },\r\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -199,6 +355,16 @@
                 "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-card [size]=\"size\">\r\n        <p>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus tempus tincidunt. Fusce quis lacus quis velit consectetur luctus. Nam consectetur ornare est, at mollis purus tincidunt ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis tristique eros.\r\n        </p>\r\n      </drx-card>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -207,6 +373,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    variant: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Secundário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-card [size]=\"size\">\r\n        <p>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus tempus tincidunt. Fusce quis lacus quis velit consectetur luctus. Nam consectetur ornare est, at mollis purus tincidunt ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis tristique eros.\r\n        </p>\r\n      </drx-card>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "TertiaryLarge",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-card [size]=\"size\">\r\n        <p>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus tempus tincidunt. Fusce quis lacus quis velit consectetur luctus. Nam consectetur ornare est, at mollis purus tincidunt ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis tristique eros.\r\n        </p>\r\n      </drx-card>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "TertiarySmall",
@@ -225,7 +411,7 @@
                 "name": "DrxButtonFont",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"quicksand\" | \"gothic\" | \"roboto\"",
+                "rawtype": "\"quicksand\" | \"gothic\" | \"raleway\"",
                 "file": "projects/ui/src/lib/button/button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -266,11 +452,33 @@
                 "kind": 193
             },
             {
+                "name": "DrxCardSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"medium\" | \"small\" | \"large\"",
+                "file": "projects/ui/src/lib/card/card.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
                 "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CardComponent>",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -333,6 +541,48 @@
                     "defaultValue": "{\r\n  args: {\r\n    variant: 'tertiary',\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Ver mais\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
                 }
             ],
+            "projects/ui/src/lib/card/card.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CardComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Card',\r\n  component: CardComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    size: {\r\n      control: 'select',\r\n      options: ['small', 'medium', 'large'],\r\n    },\r\n  },\r\n  args: {\r\n    size: 'medium',\r\n  },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-card [size]=\"size\">\r\n        <p>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus tempus tincidunt. Fusce quis lacus quis velit consectetur luctus. Nam consectetur ornare est, at mollis purus tincidunt ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis tristique eros.\r\n        </p>\r\n      </drx-card>\r\n    `,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-card [size]=\"size\">\r\n        <p>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus tempus tincidunt. Fusce quis lacus quis velit consectetur luctus. Nam consectetur ornare est, at mollis purus tincidunt ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis tristique eros.\r\n        </p>\r\n      </drx-card>\r\n    `,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "TertiaryLarge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-card [size]=\"size\">\r\n        <p>\r\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus tempus tincidunt. Fusce quis lacus quis velit consectetur luctus. Nam consectetur ornare est, at mollis purus tincidunt ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis tristique eros.\r\n        </p>\r\n      </drx-card>\r\n    `,\r\n  }),\r\n}"
+                }
+            ],
             "projects/ui/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -354,7 +604,7 @@
                     "name": "DrxButtonFont",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"quicksand\" | \"gothic\" | \"roboto\"",
+                    "rawtype": "\"quicksand\" | \"gothic\" | \"raleway\"",
                     "file": "projects/ui/src/lib/button/button.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -395,6 +645,19 @@
                     "kind": 193
                 }
             ],
+            "projects/ui/src/lib/card/card.component.ts": [
+                {
+                    "name": "DrxCardSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"medium\" | \"small\" | \"large\"",
+                    "file": "projects/ui/src/lib/card/card.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
             "projects/ui/src/lib/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -402,6 +665,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
                     "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/lib/card/card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CardComponent>",
+                    "file": "projects/ui/src/lib/card/card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -530,6 +806,75 @@
             },
             {
                 "filePath": "projects/ui/src/lib/button/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card/card.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "DrxCardSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TertiaryLarge",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card/card.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
