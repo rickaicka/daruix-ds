@@ -1,78 +1,90 @@
-@use '../tokens/typography' as *;
-
 .drx-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--drx-button-gap, var(--drx-space-2));
 
-  border: 0;
-  border-radius: 5px;
+  min-height: var(--drx-button-height, var(--drx-control-height-md));
+  padding: var(--drx-button-padding-y, var(--drx-space-3)) var(--drx-button-padding-x, var(--drx-space-6));
 
-  padding: 12px 24px;
+  border: var(--drx-button-border-width, 0) solid var(--drx-button-border-color, transparent);
+  border-radius: var(--drx-button-radius, var(--drx-radius-control));
 
-  font-family: $drx-font-family-quicksand;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1;
+  font-family: var(--drx-button-font-family, var(--drx-font-family-base));
+  font-size: var(--drx-button-font-size, var(--drx-font-size-body-md));
+  font-weight: var(--drx-button-font-weight, var(--drx-font-weight-semibold));
+  line-height: var(--drx-button-line-height, var(--drx-line-height-tight));
 
   text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
+  user-select: none;
 
   transition:
-    background-color 0.3s ease-in-out,
-    color 0.3s ease-in-out,
-    border-color 0.3s ease-in-out;
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
 
   &:disabled,
   &[aria-disabled='true'] {
-    opacity: 0.6;
+    opacity: var(--drx-button-disabled-opacity, 0.6);
     cursor: not-allowed;
+    pointer-events: none;
   }
 }
 
 .drx-button--font-quicksand {
-  font-family: $drx-font-family-quicksand;
+  font-family: var(--drx-font-family-base);
 }
 
 .drx-button--font-gothic {
-  font-family: $drx-font-family-gothic;
+  font-family: var(--drx-font-family-display);
 }
 
 .drx-button--font-raleway {
-  font-family: $drx-font-family-raleway;
+  font-family: var(--drx-font-family-heading);
 }
 
 .drx-button--primary {
-  background: var(--drx-red-base);
-  color: var(--ex-pure-white);
+  background: var(--drx-button-primary-bg, var(--drx-color-primary));
+  color: var(--drx-button-primary-color, var(--drx-color-primary-contrast));
 
-  &:hover:not(:disabled) {
-    background: var(--ex-red-scale-700);
+  &:hover:not(:disabled):not([aria-disabled='true']) {
+    background: var(--drx-button-primary-bg-hover, var(--drx-color-primary-hover));
+    color: var(--drx-button-primary-color-hover, var(--drx-color-primary-contrast));
   }
 }
 
 .drx-button--secondary {
-  background: var(--ex-neutral-scale-200);
-  color: var(--ex-gray-scale-600);
+  background: var(--drx-button-secondary-bg, var(--drx-color-surface-muted));
+  color: var(--drx-button-secondary-color, var(--drx-color-text-muted));
+  border-color: var(--drx-button-secondary-border-color, var(--drx-color-border-subtle));
 
-  &:hover:not(:disabled) {
-    background: var(--ex-neutral-scale-300);
-    color: var(--ex-gray-scale-700);
+  &:hover:not(:disabled):not([aria-disabled='true']) {
+    background: var(--drx-button-secondary-bg-hover, var(--drx-color-surface-subtle));
+    color: var(--drx-button-secondary-color-hover, var(--drx-color-text-default));
+    border-color: var(--drx-button-secondary-border-color-hover, var(--drx-color-border-default));
   }
 }
 
 .drx-button--tertiary {
-  background: var(--ex-neutral-scale-200);
-  color: var(--ex-gray-scale-600);
-  padding: 4px 16px;
+  background: var(--drx-button-tertiary-bg, transparent);
+  color: var(--drx-button-tertiary-color, var(--drx-color-primary));
+  border-color: transparent;
 
-  &:hover:not(:disabled) {
-    background: var(--ex-neutral-scale-300);
-    color: var(--ex-gray-scale-700);
+  &:hover:not(:disabled):not([aria-disabled='true']) {
+    background: var(--drx-button-tertiary-bg-hover, var(--drx-color-primary-soft));
+    color: var(--drx-button-tertiary-color-hover, var(--drx-color-primary-hover));
   }
 }
 
 .drx-button--small {
-  padding: 4px 16px;
+  min-height: var(--drx-button-small-height, var(--drx-control-height-sm));
+  padding: var(--drx-button-small-padding-y, var(--drx-space-1)) var(--drx-button-small-padding-x, var(--drx-space-4));
+  font-size: var(--drx-button-small-font-size, var(--drx-font-size-body-sm));
+}
+
+.drx-button--full {
+  width: 100%;
 }

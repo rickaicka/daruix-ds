@@ -1,0 +1,33 @@
+// Copy this file when creating a new white-label theme.
+// Example: _acme.scss with .drx-theme--acme.
+
+.drx-theme--client-name {
+  --drx-brand-primary: #0057ff;
+  --drx-brand-primary-hover: #0044cc;
+
+  --drx-color-primary: var(--drx-brand-primary);
+  --drx-color-primary-hover: var(--drx-brand-primary-hover);
+  --drx-color-primary-soft: #eaf1ff;
+  --drx-color-primary-contrast: #ffffff;
+
+  --drx-font-family-brand: "Inter", sans-serif;
+  --drx-font-family-base: "Inter", sans-serif;
+  --drx-font-family-heading: "Inter", sans-serif;
+  --drx-font-family-display: "Inter", sans-serif;
+
+  --drx-color-page-bg: #f7f8fa;
+  --drx-color-surface: #ffffff;
+  --drx-color-surface-muted: #f1f3f5;
+
+  --drx-color-text-default: #1f2937;
+  --drx-color-text-muted: #6b7280;
+  --drx-color-text-inverse: #ffffff;
+
+  --drx-color-border-default: #d1d5db;
+
+  --drx-radius-control: 8px;
+  --drx-radius-card: 16px;
+  --drx-radius-sidebar: 0;
+
+  --drx-shadow-card: 0 10px 28px rgba(0, 0, 0, 0.1);
+}

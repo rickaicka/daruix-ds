@@ -2,6 +2,7 @@
 @forward './tokens/typography';
 @forward './tokens/breakpoints';
 @forward './tokens/sizes';
+@forward './tokens/semantic';
 
 @forward './tools/functions';
 @forward './tools/responsive';
@@ -9,6 +10,16 @@
 
 @use './base/fonts';
 @use './base/reset';
+
+@use './tokens/colors';
+@use './tokens/typography';
+@use './tokens/breakpoints';
+@use './tokens/sizes';
+@use './tokens/semantic';
+
+@use './themes/daruix';
+@use './themes/dark';
+
 @use './base/global';
 
 @use './components/button';

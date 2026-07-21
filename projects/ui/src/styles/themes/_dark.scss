@@ -1,0 +1,22 @@
+.drx-theme--dark {
+  --drx-color-page-bg: #080b10;
+  --drx-color-surface: #111827;
+  --drx-color-surface-muted: #1f2937;
+  --drx-color-surface-subtle: #202c46;
+  --drx-color-surface-strong: #ffffff;
+
+  --drx-color-text-default: #f9fafb;
+  --drx-color-text-muted: #d1d5db;
+  --drx-color-text-subtle: #9ca3af;
+  --drx-color-text-disabled: #6b7280;
+  --drx-color-text-inverse: #111827;
+
+  --drx-color-border-subtle: rgba(255, 255, 255, 0.08);
+  --drx-color-border-default: rgba(255, 255, 255, 0.16);
+  --drx-color-border-strong: rgba(255, 255, 255, 0.24);
+
+  --drx-app-bg: var(--drx-color-page-bg);
+  --drx-card-bg: var(--drx-color-surface);
+  --drx-card-border-color: var(--drx-color-border-subtle);
+  --drx-divider-color: var(--drx-color-border-default);
+}

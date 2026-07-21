@@ -1,0 +1,23 @@
+$drx-breakpoint-micro: 240px;
+$drx-breakpoint-mobile: 480px;
+$drx-breakpoint-mobile-md: 600px;
+$drx-breakpoint-mobile-lg: 768px;
+$drx-breakpoint-tablet: 900px;
+$drx-breakpoint-tablet-lg: 1024px;
+$drx-breakpoint-notebook: 1200px;
+$drx-breakpoint-desktop: 1280px;
+$drx-breakpoint-desktop-lg: 1440px;
+$drx-breakpoint-ultra: 1920px;
+
+$drx-breakpoints: (
+  'micro': $drx-breakpoint-micro,
+  'mobile': $drx-breakpoint-mobile,
+  'mobile-md': $drx-breakpoint-mobile-md,
+  'mobile-lg': $drx-breakpoint-mobile-lg,
+  'tablet': $drx-breakpoint-tablet,
+  'tablet-lg': $drx-breakpoint-tablet-lg,
+  'notebook': $drx-breakpoint-notebook,
+  'desktop': $drx-breakpoint-desktop,
+  'desktop-lg': $drx-breakpoint-desktop-lg,
+  'ultra': $drx-breakpoint-ultra,
+);

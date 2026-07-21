@@ -1,0 +1,12 @@
+.container {
+  padding-inline: 24px;
+  .grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+    align-items: stretch;
+    gap: 16px;
+    margin-top: 16px;
+    overflow: visible;
+  }
+}

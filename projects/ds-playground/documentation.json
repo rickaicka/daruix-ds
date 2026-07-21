@@ -106,7 +106,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<drx-button [font]=\"'gothic'\">teste btn</drx-button>\n"
+            "templateData": "<drx-button [font]=\"'quicksand'\">teste btn</drx-button>\n"
         }
     ],
     "modules": [],

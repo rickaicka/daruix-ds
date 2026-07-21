@@ -37,16 +37,9 @@
             "configDir": "projects/ui/.storybook",
             "browserTarget": "ui:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/ui"
-            ],
+            "compodocArgs": ["-e", "json", "-d", "projects/ui"],
             "port": 6006,
-            "styles": [
-              "projects/ui/src/styles/_index.scss"
-            ]
+            "styles": ["projects/ui/src/styles/_index.scss"]
           }
         },
         "build-storybook": {
@@ -55,16 +48,22 @@
             "configDir": "projects/ui/.storybook",
             "browserTarget": "ui:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/ui"
-            ],
+            "compodocArgs": ["-e", "json", "-d", "projects/ui"],
             "outputDir": "storybook-static",
-            "styles": [
-              "projects/ui/src/styles/_index.scss"
-            ]
+            "styles": ["projects/ui/src/styles/_index.scss"]
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": true,
+          "type": "component",
+          "addTypeToClassName": true
+        },
+        "projects": {
+          "daruix-ui": {
+            "prefix": "drx"
           }
         }
       }

@@ -2,35 +2,36 @@
 
 $drx-status-colors: (
   'opened': (
-    'background': var(--ex-blue-scale-300),
-    'color': var(--ex-blue-scale-600),
+    'background': var(--drx-status-opened-bg, var(--drx-color-info-bg-strong)),
+    'color': var(--drx-status-opened-color, var(--drx-color-info-text)),
   ),
   'undelivered': (
-    'background': var(--ex-red-scale-300),
-    'color': var(--ex-red-scale-600),
+    'background': var(--drx-status-undelivered-bg, var(--drx-color-danger-bg-strong)),
+    'color': var(--drx-status-undelivered-color, var(--drx-color-danger-text)),
   ),
   'delivered': (
-    'background': var(--ex-green-scale-300),
-    'color': var(--ex-green-scale-600),
+    'background': var(--drx-status-delivered-bg, var(--drx-color-success-bg-strong)),
+    'color': var(--drx-status-delivered-color, var(--drx-color-success-text)),
   ),
 );
 
 .drx-status {
-  width: 130px;
-  padding: 6px 12px;
+  width: var(--drx-status-width, 130px);
+  padding: var(--drx-status-padding-y, 6px) var(--drx-status-padding-x, var(--drx-space-3));
 
-  border-radius: 30px;
+  border-radius: var(--drx-status-radius, var(--drx-radius-pill));
 
-  font-family: "Quicksand", serif;
+  font-family: var(--drx-status-font-family, var(--drx-font-family-base));
   font-optical-sizing: auto;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: var(--drx-status-font-weight, var(--drx-font-weight-bold));
+  font-size: var(--drx-status-font-size, var(--drx-font-size-caption));
+  line-height: var(--drx-status-line-height, var(--drx-line-height-sm));
 
   text-align: center;
 }
 
 .drx-status--mobile {
-  width: 115px;
+  width: var(--drx-status-mobile-width, 115px);
   margin: 0 auto;
 }
 

@@ -1,12 +1,12 @@
 .drx-divider {
   width: 100%;
-  margin: 32px 0;
+  margin: var(--drx-divider-margin-y, var(--drx-space-8)) 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-bottom: 1px solid var(--ex-gray-scale-400);
+  border-bottom: var(--drx-divider-border-width, 1px) solid var(--drx-divider-color);
 }
 
 .divider {

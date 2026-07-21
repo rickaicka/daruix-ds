@@ -1,0 +1,57 @@
+:root {
+  // ===========================================================================
+  // Semantic color tokens
+  // ===========================================================================
+  // Components should prefer these tokens instead of primitive color tokens.
+
+  // Brand / actions
+  --drx-color-primary: var(--drx-brand-primary);
+  --drx-color-primary-hover: var(--drx-brand-primary-hover);
+  --drx-color-primary-soft: var(--drx-red-100);
+  --drx-color-primary-contrast: var(--drx-color-white);
+
+  // App surfaces
+  --drx-color-page-bg: var(--drx-color-white);
+  --drx-color-surface: var(--drx-color-white);
+  --drx-color-surface-muted: var(--drx-neutral-50);
+  --drx-color-surface-subtle: var(--drx-gray-200);
+  --drx-color-surface-strong: var(--drx-neutral-600);
+
+  // Text
+  --drx-color-text-default: var(--drx-gray-800);
+  --drx-color-text-muted: var(--drx-gray-600);
+  --drx-color-text-subtle: var(--drx-gray-500);
+  --drx-color-text-disabled: var(--drx-gray-500);
+  --drx-color-text-inverse: var(--drx-color-white);
+  --drx-color-link: var(--drx-color-primary);
+  --drx-color-link-hover: var(--drx-color-primary-hover);
+
+  // Borders / outlines
+  --drx-color-border-subtle: var(--drx-gray-300);
+  --drx-color-border-default: var(--drx-gray-400);
+  --drx-color-border-strong: var(--drx-neutral-300);
+  --drx-color-focus-ring: var(--drx-color-primary);
+
+  // Feedback
+  --drx-color-info-bg: var(--drx-blue-200);
+  --drx-color-info-bg-strong: var(--drx-blue-300);
+  --drx-color-info-text: var(--drx-blue-600);
+
+  --drx-color-success-bg: var(--drx-green-200);
+  --drx-color-success-bg-strong: var(--drx-green-300);
+  --drx-color-success-text: var(--drx-green-600);
+
+  --drx-color-danger-bg: var(--drx-red-200);
+  --drx-color-danger-bg-strong: var(--drx-red-300);
+  --drx-color-danger-text: var(--drx-red-600);
+
+  --drx-color-warning-bg: var(--drx-yellow-200);
+  --drx-color-warning-bg-strong: var(--drx-yellow-300);
+  --drx-color-warning-text: var(--drx-yellow-600);
+
+  // App aliases
+  --drx-app-bg: var(--drx-color-page-bg);
+  --drx-card-bg: var(--drx-color-surface);
+  --drx-card-border-color: var(--drx-color-border-subtle);
+  --drx-divider-color: var(--drx-color-border-default);
+}

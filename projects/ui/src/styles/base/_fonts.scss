@@ -1,1 +1,5 @@
+// Default Daruix font import.
+//
+// For white-label apps, prefer importing the client fonts in the consumer app
+// and overriding --drx-font-family-* inside the active theme.
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:wght@100..900&family=Science+Gothic:wght@100..900&display=swap');

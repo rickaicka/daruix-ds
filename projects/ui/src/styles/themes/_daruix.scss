@@ -1,0 +1,25 @@
+:root,
+.drx-theme--daruix {
+  // ===========================================================================
+  // Daruix brand theme
+  // ===========================================================================
+  // Apply .drx-theme--daruix to body/app root when the consumer app supports
+  // runtime theme switching.
+
+  --drx-brand-primary: #c00d0e;
+  --drx-brand-primary-hover: #a60220;
+
+  --drx-color-primary: var(--drx-brand-primary);
+  --drx-color-primary-hover: var(--drx-brand-primary-hover);
+  --drx-color-primary-soft: var(--drx-red-100);
+  --drx-color-primary-contrast: var(--drx-color-white);
+
+  --drx-font-family-brand: "Science Gothic", sans-serif;
+  --drx-font-family-base: "Quicksand", sans-serif;
+  --drx-font-family-heading: "Raleway", sans-serif;
+  --drx-font-family-display: "Science Gothic", sans-serif;
+
+  --drx-radius-control: var(--drx-radius-sm);
+  --drx-radius-card: var(--drx-radius-lg);
+  --drx-radius-sidebar: var(--drx-radius-none);
+}

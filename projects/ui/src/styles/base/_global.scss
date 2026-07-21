@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  min-width: 320px;
 }
 
 *,
@@ -10,9 +11,25 @@ html {
 
 body {
   min-width: 320px;
-  font-family: "Quicksand", serif;
-  color: var(--ex-gray-scale-800);
-  background: var(--ex-pure-white);
+  min-height: 100vh;
+  font-family: var(--drx-font-family-base);
+  font-size: var(--drx-font-size-body-md);
+  font-weight: var(--drx-font-weight-regular);
+  line-height: var(--drx-line-height-md);
+  color: var(--drx-color-text-default);
+  background: var(--drx-app-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--drx-color-link);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--drx-color-link-hover);
+  }
 }
 
 button,
@@ -26,8 +43,18 @@ button {
   border: 0;
 }
 
+button,
+[role='button'] {
+  cursor: pointer;
+}
+
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--drx-color-focus-ring);
+  outline-offset: 2px;
 }
