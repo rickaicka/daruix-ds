@@ -8,30 +8,45 @@ import {
   LucideChartBar,
   LucideSettings,
   LucideShieldCheck,
-  LucideCircleHelp, LucideLogOut, LucideHome, LucideHouse, LucideUser, LucideStar, LucideChevronDown, LucideChevronUp
+  LucideCircleHelp,
+  LucideLogOut,
+  LucideHome,
+  LucideHouse,
+  LucideUser,
+  LucideStar,
+  LucideChevronDown,
+  LucideChevronUp,
+  LucideChevronRight,
 } from '@lucide/angular';
 
 export const HUB_ICON_MAP: Record<string, Type<unknown>> = {
   dashboard: LucideLayoutGrid,
   lucideLayout: LucideLayoutGrid,
+
   proposta: LucideFileText,
   description: LucideFileText,
+
   po: LucideFileText,
   request_quote: LucideFileText,
+
   obra: LucideBuilding2,
   engineering: LucideBuilding2,
+
   financeiro: LucideWallet,
   payments: LucideWallet,
+
   relatorio: LucideChartBar,
   bar_chart: LucideChartBar,
   home: LucideHouse,
   user_profile: LucideUser,
+
   admin: LucideSettings,
   admin_panel_settings: LucideShieldCheck,
   'log-out': LucideLogOut,
   favorito: LucideStar,
   'chevron-down': LucideChevronDown,
   'chevron-up': LucideChevronUp,
+  'chevron-right': LucideChevronRight,
 };
 
 export function getHubIcon(iconName?: string | null): Type<unknown> {

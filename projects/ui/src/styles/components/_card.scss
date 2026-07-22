@@ -26,7 +26,7 @@
   }
 
   &.drx-card--small {
-    min-height: 100px;
+    min-height: 64px;
   }
 
   &.drx-card--large {
@@ -37,11 +37,11 @@
 .card-title-wrapper {
   display: flex;
   align-items: center;
-
   gap: 12px;
+  min-height: inherit;
 }
 
-app-hub-icon {
+app-hub-icon{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -67,10 +67,10 @@ app-hub-icon {
 
 .card-content {
   min-width: 0;
+  flex: 1;
 
   display: flex;
   flex-direction: column;
-
   gap: 4px;
 }
 
@@ -112,5 +112,60 @@ app-hub-icon {
   }
   &--body-md{
     font-size: var(--drx-font-size-body-sm);
+  }
+}
+
+.card-favorite{
+  margin-left: auto;
+  margin-bottom: auto;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  color: #f5b400;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  app-hub-icon {
+    --hub-icon-size: 18px;
+    color: unset;
+    background-color: unset;
+  }
+
+  &:hover {
+    background: rgba(245, 180, 0, 0.1);
+  }
+
+  &--active {
+    background: rgba(245, 180, 0, 0.08);
+  }
+}
+
+.card-navigation{
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+  border-radius: 50%;
+
+  cursor: pointer;
+  background: unset;
+
+  app-hub-icon {
+    --hub-icon-size: 24px;
+    color: var(--drx-brand-dark);
+    background-color: unset;
   }
 }

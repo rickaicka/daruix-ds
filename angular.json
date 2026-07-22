@@ -126,7 +126,8 @@
               "buildTarget": "ds-playground:build:production"
             },
             "development": {
-              "buildTarget": "ds-playground:build:development"
+              "buildTarget": "ds-playground:build:development",
+              "port": 6005
             }
           },
           "defaultConfiguration": "development"

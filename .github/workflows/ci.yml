@@ -25,8 +25,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build UI library
-        run: npm run build:ui
-
-      - name: Build Storybook
-        run: npm run build:storybook
+      - name: Validate library
+        run: npm run validate

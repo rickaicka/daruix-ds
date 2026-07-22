@@ -1,31 +1,42 @@
-import { Component, computed, input } from '@angular/core';
-import { LucideCircleQuestionMark, LucideDynamicIcon, LucideStar } from '@lucide/angular';
-import { HubIconComponent } from '../../../../ds-playground/src/app/icons/hub-icon.component';
-import { getHubIcon } from '../../../../ds-playground/src/app/icons/hub-icon.mapper';
+import { Component, computed, input, model, output } from '@angular/core';
 
-export type DrxCardSize = 'medium' | 'small' | 'large';
+import { HubIconComponent } from '../../../../ds-playground/src/app/icons/hub-icon.component';
+
+export type DrxCardSize = 'small' | 'medium' | 'large';
 
 @Component({
   selector: 'drx-card',
-  imports: [LucideDynamicIcon, LucideCircleQuestionMark, HubIconComponent, LucideStar],
+  standalone: true,
+  imports: [HubIconComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  standalone: true,
 })
 export class CardComponent {
-  size = input<DrxCardSize>('medium');
-  moduloColor = input<string>('#c00d0e');
-  icon = input<string | undefined | null>('icon');
-  title = input<string>('');
-  description = input<string>('description');
-  favorite = input<string>('favorite');
-  platform = input<string[]>([]);
+  readonly size = input<DrxCardSize>('medium');
+  readonly moduloColor = input<string>('#c00d0e');
+  readonly icon = input<string | null>(null);
+  readonly title = input<string>('');
+  readonly description = input<string>('');
+  readonly platform = input<string[]>([]);
+  readonly favorite = model<boolean>(false);
+  readonly favoritable = input<boolean>(true);
+  readonly navigable = input<boolean>(false);
+  readonly cardClasses = computed(() => ['drx-card', `drx-card--${this.size()}`].join(' '));
 
-  cardClasses = computed(() => {
-    const classes = ['drx-card', `drx-card--${this.size()}`];
-    return classes.join(' ');
-  });
+  readonly navigate = output<void>();
 
-  readonly iconComponent = computed(() => getHubIcon(this.icon()));
+  protected onFavoriteClick(event: MouseEvent): void {
+    event.stopPropagation();
+
+    this.favorite.update((currentValue) => !currentValue);
+  }
+  protected onNavigateClick(event: MouseEvent): void {
+    event.stopPropagation();
+
+    if (!this.navigable()) {
+      return;
+    }
+
+    this.navigate.emit();
+  }
 }
-

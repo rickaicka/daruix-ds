@@ -27,10 +27,44 @@
           </p>
         }
       </div>
-      @if(favorite()){
-        <div class="card-favorite">
-          <svg lucideStar></svg>
-        </div>
+      @if (favoritable()) {
+        <button
+          type="button"
+          class="card-favorite"
+          [class.card-favorite--active]="favorite()"
+          [attr.aria-pressed]="favorite()"
+          [attr.aria-label]="
+      favorite()
+        ? 'Remover dos favoritos'
+        : 'Adicionar aos favoritos'
+    "
+          [title]="
+      favorite()
+        ? 'Remover dos favoritos'
+        : 'Adicionar aos favoritos'
+    "
+          (click)="onFavoriteClick($event)"
+        >
+          <app-hub-icon
+            name="favorito"
+            action
+            [class.is-filled]="favorite()"
+          />
+        </button>
+      }
+      @if (navigable()) {
+        <button
+          type="button"
+          class="card-navigation"
+          aria-label="Abrir"
+          title="Abrir"
+          (click)="onNavigateClick($event)"
+        >
+          <app-hub-icon
+            name="chevron-right"
+            action
+          />
+        </button>
       }
     </div>
   } @else {

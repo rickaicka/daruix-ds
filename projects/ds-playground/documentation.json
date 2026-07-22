@@ -67,7 +67,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "\n<div class=\"container\">\n  <app-botao></app-botao>\n  <div class=\"grid\">\n    <drx-card [size]=\"'large'\">teste</drx-card>\n    <drx-card [size]=\"'small'\">a</drx-card>\n    <drx-card></drx-card>\n  </div>\n</div>\n"
+            "templateData": "\n<div class=\"container\">\n  <app-botao></app-botao>\n  <div class=\"grid\">\n    <drx-card [size]=\"'large'\" [icon]=\"'log-out'\" [moduloColor]=\"'#c00d0e'\">teste</drx-card>\n    <drx-card [size]=\"'small'\" [moduloColor]=\"'blue'\" [platform]=\"['a','b']\">a</drx-card>\n    <drx-card></drx-card>\n  </div>\n</div>\n"
         },
         {
             "name": "Botao",
@@ -111,6 +111,99 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<drx-button [font]=\"'quicksand'\">teste btn</drx-button>\n"
+        },
+        {
+            "name": "HubIconComponent",
+            "id": "component-HubIconComponent-7fedafd1c5b535df1c651788abbee37c68ba798246c2d2c9b72bc05fd003141d4d394aff64fda63007fd9bcae67e271228fd0ffdab752bf5acd5aeadb6778301",
+            "file": "projects/ds-playground/src/app/icons/hub-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-hub-icon",
+            "styleUrls": [
+                "./hub-icon.component.scss"
+            ],
+            "styles": [],
+            "template": "<ng-container *ngComponentOutlet=\"iconComponent()\" />\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "action",
+                    "defaultValue": "false, {\r    transform: booleanAttribute\r  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "iconComponent",
+                    "defaultValue": "computed(() =>\r\n    getHubIcon(this.name())\r\n  )",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgComponentOutlet",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {booleanAttribute, Component, computed, input} from '@angular/core';\r\nimport { NgComponentOutlet } from '@angular/common';\r\n\r\nimport { getHubIcon } from './hub-icon.mapper';\r\n\r\n@Component({\r\n  selector: 'app-hub-icon',\r\n  standalone: true,\r\n  imports: [NgComponentOutlet],\r\n  host: {\r\n    '[class.cursor-pointer]': 'action()'\r\n  },\r\n  styleUrls: ['./hub-icon.component.scss'],\r\n  template: `\r\n    <ng-container *ngComponentOutlet=\"iconComponent()\" />\r\n  `\r\n})\r\nexport class HubIconComponent {\r\n  readonly name = input<string | null | undefined>(null);\r\n\r\n  readonly action = input(false, {\r\n    transform: booleanAttribute\r\n  });\r\n\r\n  readonly iconComponent = computed(() =>\r\n    getHubIcon(this.name())\r\n  );\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  width: var(--hub-icon-size, 24px);\r\n  height: var(--hub-icon-size, 24px);\r\n\r\n  color: inherit;\r\n  line-height: 0;\r\n  flex-shrink: 0;\r\n\r\n  &.cursor-pointer {\r\n    cursor: pointer;\r\n  }\r\n}\r\n\r\n:host ::ng-deep svg {\r\n  width: var(--hub-icon-size, 24px) !important;\r\n  height: var(--hub-icon-size, 24px) !important;\r\n\r\n  min-width: var(--hub-icon-size, 24px);\r\n  min-height: var(--hub-icon-size, 24px);\r\n\r\n  stroke: currentColor;\r\n}\r\n\r\n:host.is-filled {\r\n  color: #f4b400;\r\n}\r\n\r\n:host.is-filled ::ng-deep svg {\r\n  fill: currentColor;\r\n}\r\n",
+                    "styleUrl": "./hub-icon.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
         }
     ],
     "modules": [],
@@ -125,9 +218,49 @@
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
                 "defaultValue": "{\n  providers: [provideBrowserGlobalErrorListeners()],\n}"
+            },
+            {
+                "name": "HUB_ICON_MAP",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ds-playground/src/app/icons/hub-icon.mapper.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Record<string, Type<unknown>>",
+                "defaultValue": "{\r\n  dashboard: LucideLayoutGrid,\r\n  lucideLayout: LucideLayoutGrid,\r\n  proposta: LucideFileText,\r\n  description: LucideFileText,\r\n  po: LucideFileText,\r\n  request_quote: LucideFileText,\r\n  obra: LucideBuilding2,\r\n  engineering: LucideBuilding2,\r\n  financeiro: LucideWallet,\r\n  payments: LucideWallet,\r\n  relatorio: LucideChartBar,\r\n  bar_chart: LucideChartBar,\r\n  home: LucideHouse,\r\n  user_profile: LucideUser,\r\n  admin: LucideSettings,\r\n  admin_panel_settings: LucideShieldCheck,\r\n  'log-out': LucideLogOut,\r\n  favorito: LucideStar,\r\n  'chevron-down': LucideChevronDown,\r\n  'chevron-up': LucideChevronUp,\r\n}"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "getHubIcon",
+                "file": "projects/ds-playground/src/app/icons/hub-icon.mapper.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "iconName",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "optional": true
+                    }
+                ],
+                "returnType": "Type<unknown>",
+                "jsdoctags": [
+                    {
+                        "name": "iconName",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "optional": true,
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
@@ -142,9 +275,53 @@
                     "type": "ApplicationConfig",
                     "defaultValue": "{\n  providers: [provideBrowserGlobalErrorListeners()],\n}"
                 }
+            ],
+            "projects/ds-playground/src/app/icons/hub-icon.mapper.ts": [
+                {
+                    "name": "HUB_ICON_MAP",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ds-playground/src/app/icons/hub-icon.mapper.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<string, Type<unknown>>",
+                    "defaultValue": "{\r\n  dashboard: LucideLayoutGrid,\r\n  lucideLayout: LucideLayoutGrid,\r\n  proposta: LucideFileText,\r\n  description: LucideFileText,\r\n  po: LucideFileText,\r\n  request_quote: LucideFileText,\r\n  obra: LucideBuilding2,\r\n  engineering: LucideBuilding2,\r\n  financeiro: LucideWallet,\r\n  payments: LucideWallet,\r\n  relatorio: LucideChartBar,\r\n  bar_chart: LucideChartBar,\r\n  home: LucideHouse,\r\n  user_profile: LucideUser,\r\n  admin: LucideSettings,\r\n  admin_panel_settings: LucideShieldCheck,\r\n  'log-out': LucideLogOut,\r\n  favorito: LucideStar,\r\n  'chevron-down': LucideChevronDown,\r\n  'chevron-up': LucideChevronUp,\r\n}"
+                }
             ]
         },
-        "groupedFunctions": {},
+        "groupedFunctions": {
+            "projects/ds-playground/src/app/icons/hub-icon.mapper.ts": [
+                {
+                    "name": "getHubIcon",
+                    "file": "projects/ds-playground/src/app/icons/hub-icon.mapper.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "iconName",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true
+                        }
+                    ],
+                    "returnType": "Type<unknown>",
+                    "jsdoctags": [
+                        {
+                            "name": "iconName",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
@@ -181,6 +358,35 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "Botao",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ds-playground/src/app/icons/hub-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HubIconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ds-playground/src/app/icons/hub-icon.mapper.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getHubIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ds-playground/src/app/icons/hub-icon.mapper.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HUB_ICON_MAP",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
