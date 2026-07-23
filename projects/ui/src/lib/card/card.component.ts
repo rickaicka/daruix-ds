@@ -1,6 +1,6 @@
 import { Component, computed, input, model, output } from '@angular/core';
 
-import { HubIconComponent } from '../../../../ds-playground/src/app/icons/hub-icon.component';
+import { HubIconComponent } from '../icons/hub-icon.component';
 
 export type DrxCardSize = 'small' | 'medium' | 'large';
 

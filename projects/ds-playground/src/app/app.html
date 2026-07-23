@@ -4,6 +4,11 @@
   <div class="grid">
     <drx-card [size]="'large'" [icon]="'log-out'" [moduloColor]="'#c00d0e'">teste</drx-card>
     <drx-card [size]="'small'" [moduloColor]="'blue'" [platform]="['a','b']">a</drx-card>
-    <drx-card></drx-card>
+    <drx-card
+      [size]="'small'"
+    [title]="'Primary Card'"
+    [favoritable]=true
+    [navigable]=true
+    [favorite]=true></drx-card>
   </div>
 </div>

@@ -119,7 +119,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-e7f0e3560f0ce8c7a26bb2876cbe565a89223eae0156f6ed17b30662679cf846798cc7c06670cd1c6f238e433686dea0464abb14a7a8c4a2023aead02e2f9bad",
+            "id": "component-CardComponent-f5b47f7573a2e4ccb7f8a8a40ee0743ad4685a8438ca6f657ced483eeb522425a01840263666837839761c391f12313fcda79a7e552cb9306b262cb146fc40c6",
             "file": "projects/ui/src/lib/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -404,13 +404,106 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, computed, input, model, output } from '@angular/core';\n\nimport { HubIconComponent } from '../../../../ds-playground/src/app/icons/hub-icon.component';\n\nexport type DrxCardSize = 'small' | 'medium' | 'large';\n\n@Component({\n  selector: 'drx-card',\n  standalone: true,\n  imports: [HubIconComponent],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss',\n})\nexport class CardComponent {\n  readonly size = input<DrxCardSize>('medium');\n  readonly moduloColor = input<string>('#c00d0e');\n  readonly icon = input<string | null>(null);\n  readonly title = input<string>('');\n  readonly description = input<string>('');\n  readonly platform = input<string[]>([]);\n  readonly favorite = model<boolean>(false);\n  readonly favoritable = input<boolean>(true);\n  readonly navigable = input<boolean>(false);\n  readonly cardClasses = computed(() => ['drx-card', `drx-card--${this.size()}`].join(' '));\n\n  readonly navigate = output<void>();\n\n  protected onFavoriteClick(event: MouseEvent): void {\n    event.stopPropagation();\n\n    this.favorite.update((currentValue) => !currentValue);\n  }\n  protected onNavigateClick(event: MouseEvent): void {\n    event.stopPropagation();\n\n    if (!this.navigable()) {\n      return;\n    }\n\n    this.navigate.emit();\n  }\n}\n",
+            "sourceCode": "import { Component, computed, input, model, output } from '@angular/core';\n\nimport { HubIconComponent } from '../icons/hub-icon.component';\n\nexport type DrxCardSize = 'small' | 'medium' | 'large';\n\n@Component({\n  selector: 'drx-card',\n  standalone: true,\n  imports: [HubIconComponent],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.scss',\n})\nexport class CardComponent {\n  readonly size = input<DrxCardSize>('medium');\n  readonly moduloColor = input<string>('#c00d0e');\n  readonly icon = input<string | null>(null);\n  readonly title = input<string>('');\n  readonly description = input<string>('');\n  readonly platform = input<string[]>([]);\n  readonly favorite = model<boolean>(false);\n  readonly favoritable = input<boolean>(true);\n  readonly navigable = input<boolean>(false);\n  readonly cardClasses = computed(() => ['drx-card', `drx-card--${this.size()}`].join(' '));\n\n  readonly navigate = output<void>();\n\n  protected onFavoriteClick(event: MouseEvent): void {\n    event.stopPropagation();\n\n    this.favorite.update((currentValue) => !currentValue);\n  }\n  protected onNavigateClick(event: MouseEvent): void {\n    event.stopPropagation();\n\n    if (!this.navigable()) {\n      return;\n    }\n\n    this.navigate.emit();\n  }\n}\n",
             "styleUrl": "./card.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
             "templateData": "<div\n  [class]=\"cardClasses()\"\n  [style.--module-color]=\"moduloColor()\"\n>\n  @if (title()) {\n    <div class=\"card-title-wrapper\">\n      <app-hub-icon [name]=\"icon()\" />\n      <div class=\"card-content\">\n        <strong class=\"card-title drx-font-family-heading\">\n          <span class=\" drx-button--font-gothic drx-card--title-sm\">\n            {{ title() }}\n          </span>\n        </strong>\n        @if(platform().length > 0){\n          <div class=\"chip-platform-wrapper\">\n            @for (plat of platform();track $index){\n              <div class=\"chip-item\">\n                <span class=\"drx-button--font-quicksand\">{{plat}}</span>\n              </div>\n            }\n          </div>\n        }\n\n        @if (description()) {\n          <p class=\"card-description drx-card--body-md\">\n            {{ description() }}\n          </p>\n        }\n      </div>\n      @if (favoritable()) {\n        <button\n          type=\"button\"\n          class=\"card-favorite\"\n          [class.card-favorite--active]=\"favorite()\"\n          [attr.aria-pressed]=\"favorite()\"\n          [attr.aria-label]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          [title]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          (click)=\"onFavoriteClick($event)\"\n        >\n          <app-hub-icon\n            name=\"favorito\"\n            action\n            [class.is-filled]=\"favorite()\"\n          />\n        </button>\n      }\n      @if (navigable()) {\n        <button\n          type=\"button\"\n          class=\"card-navigation\"\n          aria-label=\"Abrir\"\n          title=\"Abrir\"\n          (click)=\"onNavigateClick($event)\"\n        >\n          <app-hub-icon\n            name=\"chevron-right\"\n            action\n          />\n        </button>\n      }\n    </div>\n  } @else {\n    <ng-content />\n  }\n</div>\n"
+        },
+        {
+            "name": "HubIconComponent",
+            "id": "component-HubIconComponent-7fedafd1c5b535df1c651788abbee37c68ba798246c2d2c9b72bc05fd003141d4d394aff64fda63007fd9bcae67e271228fd0ffdab752bf5acd5aeadb6778301",
+            "file": "projects/ui/src/lib/icons/hub-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-hub-icon",
+            "styleUrls": [
+                "./hub-icon.component.scss"
+            ],
+            "styles": [],
+            "template": "<ng-container *ngComponentOutlet=\"iconComponent()\" />\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "action",
+                    "defaultValue": "false, {\r    transform: booleanAttribute\r  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "iconComponent",
+                    "defaultValue": "computed(() =>\r\n    getHubIcon(this.name())\r\n  )",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgComponentOutlet",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {booleanAttribute, Component, computed, input} from '@angular/core';\r\nimport { NgComponentOutlet } from '@angular/common';\r\n\r\nimport { getHubIcon } from './hub-icon.mapper';\r\n\r\n@Component({\r\n  selector: 'app-hub-icon',\r\n  standalone: true,\r\n  imports: [NgComponentOutlet],\r\n  host: {\r\n    '[class.cursor-pointer]': 'action()'\r\n  },\r\n  styleUrls: ['./hub-icon.component.scss'],\r\n  template: `\r\n    <ng-container *ngComponentOutlet=\"iconComponent()\" />\r\n  `\r\n})\r\nexport class HubIconComponent {\r\n  readonly name = input<string | null | undefined>(null);\r\n\r\n  readonly action = input(false, {\r\n    transform: booleanAttribute\r\n  });\r\n\r\n  readonly iconComponent = computed(() =>\r\n    getHubIcon(this.name())\r\n  );\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  width: var(--hub-icon-size, 24px);\r\n  height: var(--hub-icon-size, 24px);\r\n\r\n  color: inherit;\r\n  line-height: 0;\r\n  flex-shrink: 0;\r\n\r\n  &.cursor-pointer {\r\n    cursor: pointer;\r\n  }\r\n}\r\n\r\n:host ::ng-deep svg {\r\n  width: var(--hub-icon-size, 24px) !important;\r\n  height: var(--hub-icon-size, 24px) !important;\r\n\r\n  min-width: var(--hub-icon-size, 24px);\r\n  min-height: var(--hub-icon-size, 24px);\r\n\r\n  stroke: currentColor;\r\n}\r\n\r\n:host.is-filled {\r\n  color: #f4b400;\r\n}\r\n\r\n:host.is-filled ::ng-deep svg {\r\n  fill: currentColor;\r\n}\r\n",
+                    "styleUrl": "./hub-icon.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "Ui",
@@ -474,14 +567,14 @@
                 "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Favorite Card',\n    favorite: true,\n    favoritable: true,\n  },\n}"
             },
             {
-                "name": "meta",
+                "name": "HUB_ICON_MAP",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "file": "projects/ui/src/lib/icons/hub-icon.mapper.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<CardComponent>",
-                "defaultValue": "{\n  title: 'Components/Card',\n  component: CardComponent,\n  tags: ['autodocs'],\n\n  argTypes: {\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n    },\n\n    moduloColor: {\n      control: 'color',\n    },\n\n    favorite: {\n      control: 'boolean',\n      table: {\n        category: 'Estado',\n      },\n    },\n\n    favoritable: {\n      control: 'boolean',\n      table: {\n        category: 'Comportamento',\n      },\n    },\n\n    navigable: {\n      control: 'boolean',\n      table: {\n        category: 'Comportamento',\n      },\n    },\n\n    navigate: {\n      control: false,\n      description: 'Emitido quando a navegação é acionada.',\n      table: {\n        category: 'Eventos',\n        type: {\n          summary: '() => void',\n        },\n      },\n    },\n\n    favoriteChange: {\n      control: false,\n      description: 'Emitido quando o favorito é alterado.',\n      table: {\n        category: 'Eventos',\n        type: {\n          summary: '(favorite: boolean) => void',\n        },\n      },\n    },\n\n    icon: {\n      control: 'text',\n    },\n\n    title: {\n      control: 'text',\n    },\n\n    description: {\n      control: 'text',\n    },\n\n    platform: {\n      control: 'object',\n    },\n  },\n\n  args: {\n    size: 'medium',\n    moduloColor: '#C00D0E',\n    icon: '',\n    title: 'Card',\n    description: '',\n    platform: [],\n\n    favorite: false,\n    favoritable: true,\n    navigable: true,\n\n    navigate: fn().mockName('navigate'),\n    favoriteChange: fn().mockName('favoriteChange'),\n  },\n}"
+                "type": "Record<string, Type<unknown>>",
+                "defaultValue": "{\n  dashboard: LucideLayoutGrid,\n  lucideLayout: LucideLayoutGrid,\n\n  proposta: LucideFileText,\n  description: LucideFileText,\n\n  po: LucideFileText,\n  request_quote: LucideFileText,\n\n  obra: LucideBuilding2,\n  engineering: LucideBuilding2,\n\n  financeiro: LucideWallet,\n  payments: LucideWallet,\n\n  relatorio: LucideChartBar,\n  bar_chart: LucideChartBar,\n  home: LucideHouse,\n  user_profile: LucideUser,\n\n  admin: LucideSettings,\n  admin_panel_settings: LucideShieldCheck,\n  'log-out': LucideLogOut,\n  favorito: LucideStar,\n  'chevron-down': LucideChevronDown,\n  'chevron-up': LucideChevronUp,\n  'chevron-right': LucideChevronRight,\n}"
             },
             {
                 "name": "meta",
@@ -492,6 +585,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
                 "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CardComponent>",
+                "defaultValue": "{\n  title: 'Components/Card',\n  component: CardComponent,\n  tags: ['autodocs'],\n\n  argTypes: {\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n    },\n\n    moduloColor: {\n      control: 'color',\n    },\n\n    favorite: {\n      control: 'boolean',\n      table: {\n        category: 'Estado',\n      },\n    },\n\n    favoritable: {\n      control: 'boolean',\n      table: {\n        category: 'Comportamento',\n      },\n    },\n\n    navigable: {\n      control: 'boolean',\n      table: {\n        category: 'Comportamento',\n      },\n    },\n\n    navigate: {\n      control: false,\n      description: 'Emitido quando a navegação é acionada.',\n      table: {\n        category: 'Eventos',\n        type: {\n          summary: '() => void',\n        },\n      },\n    },\n\n    favoriteChange: {\n      control: false,\n      description: 'Emitido quando o favorito é alterado.',\n      table: {\n        category: 'Eventos',\n        type: {\n          summary: '(favorite: boolean) => void',\n        },\n      },\n    },\n\n    icon: {\n      control: 'text',\n    },\n\n    title: {\n      control: 'text',\n    },\n\n    description: {\n      control: 'text',\n    },\n\n    platform: {\n      control: 'object',\n    },\n  },\n\n  args: {\n    size: 'medium',\n    moduloColor: '#C00D0E',\n    icon: '',\n    title: 'Card',\n    description: '',\n    platform: [],\n\n    favorite: false,\n    favoritable: true,\n    navigable: true,\n\n    navigate: fn().mockName('navigate'),\n    favoriteChange: fn().mockName('favoriteChange'),\n  },\n}"
             },
             {
                 "name": "preview",
@@ -507,16 +610,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/lib/card/card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    title: 'Primary Card',\n    favoritable: true,\n    favorite: true,\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/lib/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -524,14 +617,14 @@
                 "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
             },
             {
-                "name": "Secondary",
+                "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Secondary Card',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    size: 'small',\n    title: 'Primary Card',\n    favoritable: true,\n    favorite: true,\n  },\n}"
             },
             {
                 "name": "Secondary",
@@ -542,6 +635,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    variant: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Secundário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Secondary Card',\n  },\n}"
             },
             {
                 "name": "Tertiary",
@@ -574,7 +677,37 @@
                 "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Card sem favorito',\n    favoritable: false,\n  },\n}"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "getHubIcon",
+                "file": "projects/ui/src/lib/icons/hub-icon.mapper.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "iconName",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "optional": true
+                    }
+                ],
+                "returnType": "Type<unknown>",
+                "jsdoctags": [
+                    {
+                        "name": "iconName",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "optional": true,
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
         "typealiases": [
             {
                 "name": "DrxButtonFont",
@@ -635,8 +768,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<CardComponent>",
-                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -646,8 +779,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "rawtype": "StoryObj<CardComponent>",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -730,6 +863,18 @@
                     "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Card sem favorito',\n    favoritable: false,\n  },\n}"
                 }
             ],
+            "projects/ui/src/lib/icons/hub-icon.mapper.ts": [
+                {
+                    "name": "HUB_ICON_MAP",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/icons/hub-icon.mapper.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<string, Type<unknown>>",
+                    "defaultValue": "{\n  dashboard: LucideLayoutGrid,\n  lucideLayout: LucideLayoutGrid,\n\n  proposta: LucideFileText,\n  description: LucideFileText,\n\n  po: LucideFileText,\n  request_quote: LucideFileText,\n\n  obra: LucideBuilding2,\n  engineering: LucideBuilding2,\n\n  financeiro: LucideWallet,\n  payments: LucideWallet,\n\n  relatorio: LucideChartBar,\n  bar_chart: LucideChartBar,\n  home: LucideHouse,\n  user_profile: LucideUser,\n\n  admin: LucideSettings,\n  admin_panel_settings: LucideShieldCheck,\n  'log-out': LucideLogOut,\n  favorito: LucideStar,\n  'chevron-down': LucideChevronDown,\n  'chevron-up': LucideChevronUp,\n  'chevron-right': LucideChevronRight,\n}"
+                }
+            ],
             "projects/ui/src/lib/button/button.stories.ts": [
                 {
                     "name": "meta",
@@ -785,7 +930,39 @@
                 }
             ]
         },
-        "groupedFunctions": {},
+        "groupedFunctions": {
+            "projects/ui/src/lib/icons/hub-icon.mapper.ts": [
+                {
+                    "name": "getHubIcon",
+                    "file": "projects/ui/src/lib/icons/hub-icon.mapper.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "iconName",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true
+                        }
+                    ],
+                    "returnType": "Type<unknown>",
+                    "jsdoctags": [
+                        {
+                            "name": "iconName",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
         "groupedEnumerations": {},
         "groupedTypeAliases": {
             "projects/ui/src/lib/button/button.component.ts": [
@@ -847,19 +1024,6 @@
                     "kind": 193
                 }
             ],
-            "projects/ui/src/lib/card/card.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<CardComponent>",
-                    "file": "projects/ui/src/lib/card/card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/lib/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -867,6 +1031,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
                     "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/lib/card/card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CardComponent>",
+                    "file": "projects/ui/src/lib/card/card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1088,6 +1265,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/icons/hub-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HubIconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/icons/hub-icon.mapper.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getHubIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/icons/hub-icon.mapper.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HUB_ICON_MAP",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
