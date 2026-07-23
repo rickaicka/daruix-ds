@@ -410,7 +410,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div\n  [class]=\"cardClasses()\"\n  [style.--module-color]=\"moduloColor()\"\n>\n  @if (title()) {\n    <div class=\"card-title-wrapper\">\n      <app-hub-icon [name]=\"icon()\" />\n      <div class=\"card-content\">\n        <strong class=\"card-title drx-font-family-heading\">\n          <span class=\" drx-button--font-gothic drx-card--title-sm\">\n            {{ title() }}\n          </span>\n        </strong>\n        @if(platform().length > 0){\n          <div class=\"chip-platform-wrapper\">\n            @for (plat of platform();track $index){\n              <div class=\"chip-item\">\n                <span class=\"drx-button--font-quicksand\">{{plat}}</span>\n              </div>\n            }\n          </div>\n        }\n\n        @if (description()) {\n          <p class=\"card-description drx-card--body-md\">\n            {{ description() }}\n          </p>\n        }\n      </div>\n      @if (favoritable()) {\n        <button\n          type=\"button\"\n          class=\"card-favorite\"\n          [class.card-favorite--active]=\"favorite()\"\n          [attr.aria-pressed]=\"favorite()\"\n          [attr.aria-label]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          [title]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          (click)=\"onFavoriteClick($event)\"\n        >\n          <app-hub-icon\n            name=\"favorito\"\n            action\n            [class.is-filled]=\"favorite()\"\n          />\n        </button>\n      }\n      @if (navigable()) {\n        <button\n          type=\"button\"\n          class=\"card-navigation\"\n          aria-label=\"Abrir\"\n          title=\"Abrir\"\n          (click)=\"onNavigateClick($event)\"\n        >\n          <app-hub-icon\n            name=\"chevron-right\"\n            action\n          />\n        </button>\n      }\n    </div>\n  } @else {\n    <ng-content />\n  }\n</div>\n"
+            "templateData": "<div\n  [class]=\"cardClasses()\"\n  [style.--module-color]=\"moduloColor()\"\n>\n  @if (title()) {\n    <div class=\"card-title-wrapper\">\n      <app-hub-icon [name]=\"icon()\" />\n      <div class=\"card-content\">\n        <strong class=\"card-title drx-font-family-heading\">\n          <span class=\" drx-card--font-gothic drx-card--subtitle-sm\">\n            {{ title() }}\n          </span>\n        </strong>\n        @if(platform().length > 0){\n          <div class=\"chip-platform-wrapper\">\n            @for (plat of platform();track $index){\n              <div class=\"chip-item\">\n                <span class=\"drx-button--font-quicksand\">{{plat}}</span>\n              </div>\n            }\n          </div>\n        }\n\n        @if (description()) {\n          <p class=\"card-description drx-card--body-md\">\n            {{ description() }}\n          </p>\n        }\n      </div>\n      @if (favoritable()) {\n        <button\n          type=\"button\"\n          class=\"card-favorite\"\n          [class.card-favorite--active]=\"favorite()\"\n          [attr.aria-pressed]=\"favorite()\"\n          [attr.aria-label]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          [title]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          (click)=\"onFavoriteClick($event)\"\n        >\n          <app-hub-icon\n            name=\"favorito\"\n            action\n            [class.is-filled]=\"favorite()\"\n          />\n        </button>\n      }\n      @if (navigable()) {\n        <button\n          type=\"button\"\n          class=\"card-navigation\"\n          aria-label=\"Abrir\"\n          title=\"Abrir\"\n          (click)=\"onNavigateClick($event)\"\n        >\n          <app-hub-icon\n            name=\"chevron-right\"\n            action\n          />\n        </button>\n      }\n    </div>\n  } @else {\n    <ng-content />\n  }\n</div>\n"
         },
         {
             "name": "HubIconComponent",
@@ -580,21 +580,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/lib/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CardComponent>",
                 "defaultValue": "{\n  title: 'Components/Card',\n  component: CardComponent,\n  tags: ['autodocs'],\n\n  argTypes: {\n    size: {\n      control: 'select',\n      options: ['small', 'medium', 'large'],\n    },\n\n    moduloColor: {\n      control: 'color',\n    },\n\n    favorite: {\n      control: 'boolean',\n      table: {\n        category: 'Estado',\n      },\n    },\n\n    favoritable: {\n      control: 'boolean',\n      table: {\n        category: 'Comportamento',\n      },\n    },\n\n    navigable: {\n      control: 'boolean',\n      table: {\n        category: 'Comportamento',\n      },\n    },\n\n    navigate: {\n      control: false,\n      description: 'Emitido quando a navegação é acionada.',\n      table: {\n        category: 'Eventos',\n        type: {\n          summary: '() => void',\n        },\n      },\n    },\n\n    favoriteChange: {\n      control: false,\n      description: 'Emitido quando o favorito é alterado.',\n      table: {\n        category: 'Eventos',\n        type: {\n          summary: '(favorite: boolean) => void',\n        },\n      },\n    },\n\n    icon: {\n      control: 'text',\n    },\n\n    title: {\n      control: 'text',\n    },\n\n    description: {\n      control: 'text',\n    },\n\n    platform: {\n      control: 'object',\n    },\n  },\n\n  args: {\n    size: 'medium',\n    moduloColor: '#C00D0E',\n    icon: '',\n    title: 'Card',\n    description: '',\n    platform: [],\n\n    favorite: false,\n    favoritable: true,\n    navigable: true,\n\n    navigate: fn().mockName('navigate'),\n    favoriteChange: fn().mockName('favoriteChange'),\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -610,16 +610,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/lib/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -627,14 +617,14 @@
                 "defaultValue": "{\n  args: {\n    size: 'small',\n    title: 'Primary Card',\n    favoritable: true,\n    favorite: true,\n  },\n}"
             },
             {
-                "name": "Secondary",
+                "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/ui/src/lib/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    variant: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Secundário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Secondary",
@@ -645,6 +635,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Secondary Card',\n  },\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    variant: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Secundário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Tertiary",
@@ -768,8 +768,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "rawtype": "StoryObj<CardComponent>",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -779,8 +779,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<CardComponent>",
-                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1024,19 +1024,6 @@
                     "kind": 193
                 }
             ],
-            "projects/ui/src/lib/button/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/lib/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/ui/src/lib/card/card.stories.ts": [
                 {
                     "name": "Story",
@@ -1044,6 +1031,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CardComponent>",
                     "file": "projects/ui/src/lib/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/ui/src/lib/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/lib/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
