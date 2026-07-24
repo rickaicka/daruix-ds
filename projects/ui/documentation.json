@@ -413,6 +413,247 @@
             "templateData": "<div\n  [class]=\"cardClasses()\"\n  [style.--module-color]=\"moduloColor()\"\n>\n  @if (title()) {\n    <div class=\"card-title-wrapper\">\n      <app-hub-icon [name]=\"icon()\" />\n      <div class=\"card-content\">\n        <strong class=\"card-title drx-font-family-heading\">\n          <span class=\" drx-card--font-gothic drx-card--subtitle-sm\">\n            {{ title() }}\n          </span>\n        </strong>\n        @if(platform().length > 0){\n          <div class=\"chip-platform-wrapper\">\n            @for (plat of platform();track $index){\n              <div class=\"chip-item\">\n                <span class=\"drx-button--font-quicksand\">{{plat}}</span>\n              </div>\n            }\n          </div>\n        }\n\n        @if (description()) {\n          <p class=\"card-description drx-card--body-md\">\n            {{ description() }}\n          </p>\n        }\n      </div>\n      @if (favoritable()) {\n        <button\n          type=\"button\"\n          class=\"card-favorite\"\n          [class.card-favorite--active]=\"favorite()\"\n          [attr.aria-pressed]=\"favorite()\"\n          [attr.aria-label]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          [title]=\"\n      favorite()\n        ? 'Remover dos favoritos'\n        : 'Adicionar aos favoritos'\n    \"\n          (click)=\"onFavoriteClick($event)\"\n        >\n          <app-hub-icon\n            name=\"favorito\"\n            action\n            [class.is-filled]=\"favorite()\"\n          />\n        </button>\n      }\n      @if (navigable()) {\n        <button\n          type=\"button\"\n          class=\"card-navigation\"\n          aria-label=\"Abrir\"\n          title=\"Abrir\"\n          (click)=\"onNavigateClick($event)\"\n        >\n          <app-hub-icon\n            name=\"chevron-right\"\n            action\n          />\n        </button>\n      }\n    </div>\n  } @else {\n    <ng-content />\n  }\n</div>\n"
         },
         {
+            "name": "CardSquareComponent",
+            "id": "component-CardSquareComponent-77cfef9d81cedea546b8d3d9862f2aa2fcf9d87c3fb7134a142a5edffbbd536cf4b866ad8d78b9c2b07d65adc8c176facd6b10c7150922700017365c90ea7a5d",
+            "file": "projects/ui/src/lib/card-square/card-square.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "drx-card-square",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card-square.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "children",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "icone",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "modulos",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "nome",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "rota",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "textFooter",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "cardSquareText",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "router",
+                    "defaultValue": "inject(Router)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "iconColor",
+                    "args": [
+                        {
+                            "name": "cor_icone",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "cor_icone",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "navigateRoute",
+                    "args": [
+                        {
+                            "name": "route",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "route",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "HubIconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, inject, input } from '@angular/core';\nimport { HubIconComponent } from 'ui';\nimport { Router } from '@angular/router';\n\nexport type DrxCarSquareType = 'list' | 'state' | 'card'\n\n@Component({\n  selector: 'drx-card-square',\n  imports: [HubIconComponent],\n  templateUrl: './card-square.component.html',\n  styleUrl: './card-square.component.scss',\n})\nexport class CardSquareComponent {\n  readonly modulos = input<any[]>([]);\n  readonly children = input<any[]>([]);\n  readonly textFooter = input<string>('');\n  readonly nome = input<string>('');\n  readonly icone = input<string>('');\n  readonly rota = input<string>('');\n  readonly color = input<string>('');\n\n  private readonly router = inject(Router);\n\n  cardSquareText = () => {\n    if (this.children.length > 0) {\n    }\n  };\n\n  iconColor(cor_icone: string): string {\n    return cor_icone?.trim();\n  }\n\n  navigateRoute(route: string): void {\n    if (!route) {\n      return;\n    }\n\n    const cleanRoute = route.replace(/^\\/+/, '');\n    void this.router.navigateByUrl(`${cleanRoute}`);\n  }\n}\n\n",
+            "styleUrl": "./card-square.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<article class=\"all__card\">\n  <header class=\"all__card-header\">\n    <button\n      type=\"button\"\n      class=\"all__module\"\n      (click)=\"navigateRoute(rota())\"\n    >\n      @if(icone()){\n\n        <span\n          class=\"all__module-icon\"\n          [style.--module-icon-color]=\"iconColor(color())\"\n        >\n        <app-hub-icon [name]=\"icone()\" />\n      </span>\n\n        <span class=\"all__module-info\">\n        <strong class=\"quicksand-m bolder-font\">\n          {{ nome() }}\n        </strong>\n      </span>\n      }\n    </button>\n  </header>\n\n  <div class=\"all__children\">\n    <ng-content></ng-content>\n  </div>\n\n  <footer class=\"all__footer\">\n    <button\n      type=\"button\"\n      class=\"all__see-all quicksand-sm bolder-font\"\n      (click)=\"navigateRoute(rota())\"\n    >\n      @if (children().length > 0) {\n        Ver todos ({{ children().length }})\n      } @else {\n        {{ textFooter() }}\n      }\n\n      <span aria-hidden=\"true\">›</span>\n    </button>\n  </footer>\n</article>\n"
+        },
+        {
             "name": "HubIconComponent",
             "id": "component-HubIconComponent-7fedafd1c5b535df1c651788abbee37c68ba798246c2d2c9b72bc05fd003141d4d394aff64fda63007fd9bcae67e271228fd0ffdab752bf5acd5aeadb6778301",
             "file": "projects/ui/src/lib/icons/hub-icon.component.ts",
@@ -557,6 +798,16 @@
                 "defaultValue": "{\n  stories: [\n    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',\n  ],\n  addons: [\n    '@storybook/addon-docs',\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
             },
             {
+                "name": "CustomColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    nome: 'Memorando de Remessas',\n    icone: 'memorando',\n    rota: '/remessas',\n    color: '#7C3AED',\n    children: [\n      {\n        nome: 'Consultar memorandos',\n        rota: '/remessas',\n      },\n      {\n        nome: 'Novo memorando',\n        rota: '/remessas/novo',\n      },\n    ],\n  },\n}"
+            },
+            {
                 "name": "Favorite",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -580,6 +831,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -590,11 +851,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    variant: {\r\n      control: 'select',\r\n      options: ['primary', 'secondary', 'tertiary'],\r\n    },\r\n    size: {\r\n      control: 'select',\r\n      options: ['medium', 'small'],\r\n    },\r\n    disabled: {\r\n      control: 'boolean',\r\n    },\r\n    type: {\r\n      control: 'select',\r\n      options: ['button', 'submit', 'reset'],\r\n    },\r\n  },\r\n  args: {\r\n    variant: 'primary',\r\n    size: 'medium',\r\n    disabled: false,\r\n    type: 'button',\r\n  },\r\n}"
+                "type": "Meta<CardSquareComponent>",
+                "defaultValue": "{\n  title: 'Components/Card Square',\n  component: CardSquareComponent,\n  tags: ['autodocs'],\n\n  decorators: [\n    applicationConfig({\n      providers: [provideRouter([])],\n    }),\n  ],\n\n  argTypes: {\n    nome: {\n      control: 'text',\n      description: 'Nome apresentado no cabeçalho do card.',\n      table: {\n        category: 'Conteúdo',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    icone: {\n      control: 'text',\n      description: 'Nome do ícone registrado no HubIconComponent.',\n      table: {\n        category: 'Conteúdo',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    rota: {\n      control: 'text',\n      description: 'Rota acessada pelo cabeçalho e pelo rodapé.',\n      table: {\n        category: 'Comportamento',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    color: {\n      control: 'color',\n      description: 'Cor utilizada no ícone do módulo.',\n      table: {\n        category: 'Aparência',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    textFooter: {\n      control: 'text',\n      description: 'Texto do rodapé quando o card não possui filhos.',\n      table: {\n        category: 'Conteúdo',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    children: {\n      control: 'object',\n      description: 'Itens filhos. A quantidade é apresentada no texto “Ver todos”.',\n      table: {\n        category: 'Dados',\n        type: {\n          summary: 'unknown[]',\n        },\n      },\n    },\n\n    modulos: {\n      control: 'object',\n      description: 'Lista de módulos associada ao card.',\n      table: {\n        category: 'Dados',\n        type: {\n          summary: 'unknown[]',\n        },\n      },\n    },\n  },\n\n  args: {\n    nome: 'Propostas',\n    icone: 'propostas',\n    rota: '/propostas',\n    color: '#C00D0E',\n    textFooter: 'Acessar módulo',\n    children: [],\n    modulos: [],\n  },\n}"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    nome: 'Aplicativos',\n    icone: 'aplicativos',\n    rota: '/dashboard',\n    color: '#C00D0E',\n    children: [],\n    textFooter: 'Ver aplicativo',\n  },\n}"
             },
             {
                 "name": "preview",
@@ -610,6 +881,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ui/src/lib/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -620,21 +901,11 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Primário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui/src/lib/card/card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Secondary Card',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    nome: 'Propostas',\n    icone: 'propostas',\n    rota: '/propostas',\n    color: '#C00D0E',\n    textFooter: 'Acessar módulo',\n  },\n}"
             },
             {
                 "name": "Secondary",
@@ -645,6 +916,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    variant: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Botão Secundário\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'medium',\n    title: 'Secondary Card',\n  },\n}"
             },
             {
                 "name": "Tertiary",
@@ -665,6 +946,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    variant: 'tertiary',\r\n    size: 'small',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <drx-button\r\n        [variant]=\"variant\"\r\n        [size]=\"size\"\r\n        [disabled]=\"disabled\"\r\n        [type]=\"type\"\r\n      >\r\n        Ver mais\r\n      </drx-button>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "WithChildren",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    nome: 'Obras',\n    icone: 'obras',\n    rota: '/obras',\n    color: '#2563EB',\n    children: [\n      {\n        nome: 'Consultar obras',\n        rota: '/obras/consulta',\n      },\n      {\n        nome: 'Diário de obra',\n        rota: '/obras/diario',\n      },\n      {\n        nome: 'Relatórios',\n        rota: '/obras/relatorios',\n      },\n    ],\n  },\n\n  render: (args) => ({\n    props: args,\n    template: `\n      <drx-card-square\n        [nome]=\"nome\"\n        [icone]=\"icone\"\n        [rota]=\"rota\"\n        [color]=\"color\"\n        [children]=\"children\"\n        [textFooter]=\"textFooter\"\n      >\n        <div style=\"\n          display: flex;\n          flex-direction: column;\n          gap: 8px;\n          padding-block: 12px;\n        \">\n          <span>Consultar obras</span>\n          <span>Diário de obra</span>\n          <span>Relatórios</span>\n        </div>\n      </drx-card-square>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "WithoutChildren",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    nome: 'Financeiro',\n    icone: 'financeiro',\n    rota: '/financeiro',\n    color: '#16A34A',\n    children: [],\n    textFooter: 'Abrir Financeiro',\n  },\n}"
             },
             {
                 "name": "WithoutFavoriteAction",
@@ -765,6 +1066,28 @@
                 "kind": 193
             },
             {
+                "name": "DrxCarSquareType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"list\" | \"state\" | \"card\"",
+                "file": "projects/ui/src/lib/card-square/card-square.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -779,8 +1102,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ui/src/lib/button/button.stories.ts",
+                "rawtype": "StoryObj<CardSquareComponent>",
+                "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -799,6 +1122,68 @@
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
                     "defaultValue": "{\n  stories: [\n    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',\n  ],\n  addons: [\n    '@storybook/addon-docs',\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
+                }
+            ],
+            "projects/ui/src/lib/card-square/card-square.component.stories.ts": [
+                {
+                    "name": "CustomColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nome: 'Memorando de Remessas',\n    icone: 'memorando',\n    rota: '/remessas',\n    color: '#7C3AED',\n    children: [\n      {\n        nome: 'Consultar memorandos',\n        rota: '/remessas',\n      },\n      {\n        nome: 'Novo memorando',\n        rota: '/remessas/novo',\n      },\n    ],\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CardSquareComponent>",
+                    "defaultValue": "{\n  title: 'Components/Card Square',\n  component: CardSquareComponent,\n  tags: ['autodocs'],\n\n  decorators: [\n    applicationConfig({\n      providers: [provideRouter([])],\n    }),\n  ],\n\n  argTypes: {\n    nome: {\n      control: 'text',\n      description: 'Nome apresentado no cabeçalho do card.',\n      table: {\n        category: 'Conteúdo',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    icone: {\n      control: 'text',\n      description: 'Nome do ícone registrado no HubIconComponent.',\n      table: {\n        category: 'Conteúdo',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    rota: {\n      control: 'text',\n      description: 'Rota acessada pelo cabeçalho e pelo rodapé.',\n      table: {\n        category: 'Comportamento',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    color: {\n      control: 'color',\n      description: 'Cor utilizada no ícone do módulo.',\n      table: {\n        category: 'Aparência',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    textFooter: {\n      control: 'text',\n      description: 'Texto do rodapé quando o card não possui filhos.',\n      table: {\n        category: 'Conteúdo',\n        type: {\n          summary: 'string',\n        },\n      },\n    },\n\n    children: {\n      control: 'object',\n      description: 'Itens filhos. A quantidade é apresentada no texto “Ver todos”.',\n      table: {\n        category: 'Dados',\n        type: {\n          summary: 'unknown[]',\n        },\n      },\n    },\n\n    modulos: {\n      control: 'object',\n      description: 'Lista de módulos associada ao card.',\n      table: {\n        category: 'Dados',\n        type: {\n          summary: 'unknown[]',\n        },\n      },\n    },\n  },\n\n  args: {\n    nome: 'Propostas',\n    icone: 'propostas',\n    rota: '/propostas',\n    color: '#C00D0E',\n    textFooter: 'Acessar módulo',\n    children: [],\n    modulos: [],\n  },\n}"
+                },
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nome: 'Aplicativos',\n    icone: 'aplicativos',\n    rota: '/dashboard',\n    color: '#C00D0E',\n    children: [],\n    textFooter: 'Ver aplicativo',\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nome: 'Propostas',\n    icone: 'propostas',\n    rota: '/propostas',\n    color: '#C00D0E',\n    textFooter: 'Acessar módulo',\n  },\n}"
+                },
+                {
+                    "name": "WithChildren",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nome: 'Obras',\n    icone: 'obras',\n    rota: '/obras',\n    color: '#2563EB',\n    children: [\n      {\n        nome: 'Consultar obras',\n        rota: '/obras/consulta',\n      },\n      {\n        nome: 'Diário de obra',\n        rota: '/obras/diario',\n      },\n      {\n        nome: 'Relatórios',\n        rota: '/obras/relatorios',\n      },\n    ],\n  },\n\n  render: (args) => ({\n    props: args,\n    template: `\n      <drx-card-square\n        [nome]=\"nome\"\n        [icone]=\"icone\"\n        [rota]=\"rota\"\n        [color]=\"color\"\n        [children]=\"children\"\n        [textFooter]=\"textFooter\"\n      >\n        <div style=\"\n          display: flex;\n          flex-direction: column;\n          gap: 8px;\n          padding-block: 12px;\n        \">\n          <span>Consultar obras</span>\n          <span>Diário de obra</span>\n          <span>Relatórios</span>\n        </div>\n      </drx-card-square>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithoutChildren",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    nome: 'Financeiro',\n    icone: 'financeiro',\n    rota: '/financeiro',\n    color: '#16A34A',\n    children: [],\n    textFooter: 'Abrir Financeiro',\n  },\n}"
                 }
             ],
             "projects/ui/src/lib/card/card.stories.ts": [
@@ -1024,6 +1409,32 @@
                     "kind": 193
                 }
             ],
+            "projects/ui/src/lib/card-square/card-square.component.ts": [
+                {
+                    "name": "DrxCarSquareType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"list\" | \"state\" | \"card\"",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "projects/ui/src/lib/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/ui/src/lib/card/card.stories.ts": [
                 {
                     "name": "Story",
@@ -1037,13 +1448,13 @@
                     "kind": 184
                 }
             ],
-            "projects/ui/src/lib/button/button.stories.ts": [
+            "projects/ui/src/lib/card-square/card-square.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ui/src/lib/button/button.stories.ts",
+                    "rawtype": "StoryObj<CardSquareComponent>",
+                    "file": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1176,6 +1587,95 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Playground",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithChildren",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithoutChildren",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardSquareComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/card-square/card-square.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "DrxCarSquareType",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

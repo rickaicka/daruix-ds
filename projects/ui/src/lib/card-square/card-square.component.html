@@ -1,0 +1,45 @@
+<article class="all__card">
+  <header class="all__card-header">
+    <button
+      type="button"
+      class="all__module"
+      (click)="navigateRoute(rota())"
+    >
+      @if(icone()){
+
+        <span
+          class="all__module-icon"
+          [style.--module-icon-color]="iconColor(color())"
+        >
+        <app-hub-icon [name]="icone()" />
+      </span>
+
+        <span class="all__module-info">
+        <strong class="quicksand-m bolder-font">
+          {{ nome() }}
+        </strong>
+      </span>
+      }
+    </button>
+  </header>
+
+  <div class="all__children">
+    <ng-content></ng-content>
+  </div>
+
+  <footer class="all__footer">
+    <button
+      type="button"
+      class="all__see-all quicksand-sm bolder-font"
+      (click)="navigateRoute(rota())"
+    >
+      @if (children().length > 0) {
+        Ver todos ({{ children().length }})
+      } @else {
+        {{ textFooter() }}
+      }
+
+      <span aria-hidden="true">›</span>
+    </button>
+  </footer>
+</article>
