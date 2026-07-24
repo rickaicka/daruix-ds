@@ -1,6 +1,6 @@
 import { Component, inject, input } from '@angular/core';
-import { HubIconComponent } from 'ui';
 import { Router } from '@angular/router';
+import { HubIconComponent } from '../icons/hub-icon.component';
 
 export type DrxCarSquareType = 'list' | 'state' | 'card'
 
